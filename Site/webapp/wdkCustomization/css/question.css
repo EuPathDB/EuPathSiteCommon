@@ -94,6 +94,32 @@
 .xor-select .ui-button.ui-state-active { z-index: 10; }
 .xor-select .ui-button span { padding: 0.1em 1em; }
 
+/* static fold change */
+.params {
+  position: relative;
+}
+
+/*
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    CSS rules for Fold Change Expression graph = BEGIN
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+.fold-change-img {
+  position: absolute;
+  left: 60%;
+  width: 400px;
+  top: 10%;
+  height: 300px;
+  border: 1px solid #AAA;
+  border-radius: 4px;
+}
+/*
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    CSS rules for Fold Change Expression graph = END
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
 .group-detail.ui-widget-content {
   background: whiteSmoke;
 }
