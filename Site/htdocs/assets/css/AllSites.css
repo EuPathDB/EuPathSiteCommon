@@ -65,10 +65,10 @@ table.threecolumn td {
 	display: block;
 }
 */
-#info {
+#bubbles .info {
    width: 209px;
-   min-height: 240px;
-   height:auto;
+   min-height: 250px; /* was 240px before font-size was enlarged in tools */
+   height: 100%;
    background-image: url(../images/bubble_backgrnd.png);
    background-repeat: repeat-y;
    text-align: left;
@@ -78,17 +78,20 @@ table.threecolumn td {
    padding-left: 19px;
 }
 
-#info li
+#bubbles .info ul {
+  height: 100%;
+}
+#bubbles .info li
 {
 	line-height: 1.5em;
 /*	list-style-image: url(../images/cir_bullet.png);*/
 	list-style-type: none;
 	margin-left: 7px;
 }
-#info li ul {
+#bubbles .info li ul {
   margin: 4px 0;
 }
-#info li ul li
+#bubbles .info li ul li
 {
 /*	list-style-image: url(../images/cir_bullet2.png);*/
 	border-bottom:1px solid lightgrey;
@@ -98,7 +101,11 @@ table.threecolumn td {
 	line-height: 1.1em;
 }
 
-#infobottom {
+.bubble-header {
+  margin-bottom: -4px;
+}
+
+#bubbles .infobottom {
 	width: 209px;
 	min-height: 35px;    /* trying to keep buckest same size */
 	background-image: url(../images/bubble_bottom.png);
@@ -133,7 +140,7 @@ a.heading:hover + a.detail_link, a.detail_link:hover {
 
 /* for Internet Explorer */
 /*\*/
-* html #info {
+* html #bubbles .info {
 height: 240px;
 }
 /**/
@@ -357,6 +364,71 @@ span.smallTitle {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =MENUBAR (horizontal bar, under header)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/	
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 =SOCIALMEDIA (about, help, etc.)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/	
+.twitter,
+.facebook,
+.youtube {
+  height: 22px;
+  width: 22px;
+  background: url(../images/social_sprites_22.png) no-repeat;
+  display: inline-block;
+}
+.twitter {
+  background-position: -25px -2px;
+}
+.facebook {
+  background-position: -2px -2px;
+}
+.youtube {
+  background-position: -48px -2px;
+}
+.facebook.small,
+.twitter.small,
+.youtube.small {
+  height: 14px;
+  width: 14px;
+  background: url(../images/social_sprites_14.png) no-repeat;
+  display: inline-block;
+}
+.facebook.small {
+  background-position: -15px 0px ;
+}
+.twitter.small {
+  background-position: 0px 0px ;
+}
+.youtube.small {
+  background-position: -30px 0px ;
+}
+.twitter + span,
+.facebook + span,
+.youtube + span {
+  margin-left: 12px;
+}
+.socmedia-link .facebook,
+.socmedia-link .twitter,
+.socmedia-link .youtube {
+  margin-left: 2px;
+}
+#sidebar .socmedia-link,
+#menu_lefttop .socmedia-link {
+  list-style: none;
+  padding-top: 2px;
+}
+#sidebar .twitter,
+#sidebar .facebook,
+#sidebar .youtube,
+#menu .twitter,
+#menu .facebook,
+#menu .youtube {
+  position: relative;
+  top: 2px;
+}
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =Superfish menu stuff -- override in ${project}.css
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -778,7 +850,7 @@ a#gbView {
 }
 
 #gnCtx {
-    height: 500px;
+    max-height: 500px;
     overflow: auto;
 }
 
