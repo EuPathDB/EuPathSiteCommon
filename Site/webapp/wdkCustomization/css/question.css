@@ -105,15 +105,38 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-.fold-change-img {
+.fold-change .fold-change-img {
+  /*
   position: absolute;
   left: 60%;
-  width: 400px;
   top: 10%;
+  */
+  position: relative;
+  left: 5em;
+  float: left;
+  width: 400px;
   height: 300px;
   border: 1px solid #AAA;
   border-radius: 4px;
 }
+
+.fold-change .param-control .param {
+  max-width: 22em;
+  text-indent: -2em;
+  position: relative;
+  left: 2em;
+}
+
+.fold-change .param-group .group-detail {
+  float: left;
+}
+
+/* clearfix */
+.fold-change .param-group:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.fold-change .param-group { display: inline-block; }
+* html .fold-change .param-group { height:1%; }
+.fold-change .param-group { display:block; }
+
 /*
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     CSS rules for Fold Change Expression graph = END
