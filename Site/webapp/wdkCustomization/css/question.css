@@ -110,10 +110,12 @@
   position: absolute;
   left: 60%;
   top: 10%;
+  float: left;
   */
+  display: inline-block;
+  vertical-align: top;
   position: relative;
   left: 5em;
-  float: left;
   width: 400px;
   height: 300px;
   border: 1px solid #AAA;
@@ -121,14 +123,22 @@
 }
 
 .fold-change .param-control .param {
-  max-width: 22em;
   text-indent: -2em;
   position: relative;
   left: 2em;
 }
 
 .fold-change .param-group .group-detail {
-  float: left;
+  display: inline-block;
+  width: 45%;
+}
+
+.fold-change .param-item label {
+  float: none;
+}
+
+.fold-change .param-control {
+  margin: 0;
 }
 
 /* clearfix */
