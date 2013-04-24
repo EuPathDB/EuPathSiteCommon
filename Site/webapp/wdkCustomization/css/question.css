@@ -125,6 +125,7 @@
 }
 
 .fold-change .param-control .param {
+  width: 95%; /* force wrap */
   text-indent: -2em;
   position: relative;
   left: 2em;
