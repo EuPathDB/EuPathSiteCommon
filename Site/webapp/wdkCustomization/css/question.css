@@ -144,8 +144,12 @@
 }
 
 .fold-change .fold-change-help {
-  text-align: center;
   margin-top: 1em;
+  width: 400px;
+}
+
+.fold-change .fold-change-help p {
+  margin: 0.4em 0;
 }
 
 .fold-change .fold-change-help a {
