@@ -134,10 +134,11 @@
   float: left;
   */
   position: relative;
-  width: 400px;
-  height: 300px;
+  width: 402px;
+  height: 302px;
   border: 1px solid #AAA;
   border-radius: 4px;
+  padding: 1px;
 }
 
 .fold-change .param-control .param {
