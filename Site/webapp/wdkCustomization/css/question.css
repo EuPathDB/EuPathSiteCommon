@@ -105,11 +105,27 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+.fold-change .param-group.empty,
+.fold-change .param-group .group-detail {
+  width: 900px;
+  margin: auto;
+}
+
+.fold-change .param-item {
+  padding-left: 1em;
+}
+
 .fold-change .fold-change-wrapper {
   display: inline-block;
   vertical-align: top;
-  left: 5em;
+  width: 48%;
+  padding-right: 1em;
 }
+
+.fold-change .fold-change-wrapper > div {
+  float: right;
+}
+
 .fold-change .fold-change-img {
   /*
   position: absolute;
@@ -125,19 +141,19 @@
 }
 
 .fold-change .param-control .param {
-  width: 95%; /* force wrap */
+  width: 93%; /* force wrap */
   text-indent: -2em;
   position: relative;
   left: 2em;
 }
 
-.fold-change .param-group .group-detail {
+.fold-change .param-group.empty .group-detail {
   display: inline-block;
-  width: 45%;
+  width: 49%;
 }
 
 .fold-change .param-item {
-  padding-left: 2em;
+  /* padding-left: 15%; was 2em */
 }
 
 .fold-change .param-item label {
@@ -163,10 +179,10 @@
 }
 
 /* clearfix */
-.fold-change .param-group:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.fold-change .param-group { display: inline-block; }
-* html .fold-change .param-group { height:1%; }
-.fold-change .param-group { display:block; }
+.fold-change .param-group.empty:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.fold-change .param-group.empty { display: inline-block; }
+* html .fold-change .param-group.empty { height:1%; }
+.fold-change .param-group.empty { display:block; }
 
 /*
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
