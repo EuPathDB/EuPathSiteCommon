@@ -136,8 +136,13 @@
   width: 45%;
 }
 
+.fold-change .param-item {
+  padding-left: 2em;
+}
+
 .fold-change .param-item label {
   float: none;
+  margin-left: -1.5em;
 }
 
 .fold-change .param-control {
