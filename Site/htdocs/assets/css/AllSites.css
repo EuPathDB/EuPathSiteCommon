@@ -434,7 +434,7 @@ span.smallTitle {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 #menu {
-  z-index: 500;
+  z-index: 99;
   height: 28px;
   min-width: 980px;
 }
@@ -459,7 +459,7 @@ span.smallTitle {
 
 .sf-menu li {
   background: transparent;
-  z-index: 500;
+  z-index: 99;
 }
 
 .sf-menu li li {
