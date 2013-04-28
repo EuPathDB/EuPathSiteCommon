@@ -132,7 +132,7 @@ table.threecolumn td {
 	text-decoration: underline;
 }
 
-a.heading:hover + a.detail_link, a.detail_link:hover {
+li:hover a.heading + a.detail_link, a.detail_link:hover {
 	left: -2px;
 	position: relative;
 }
@@ -544,6 +544,8 @@ span.smallTitle {
    color: #505050;
    line-height: 1.2em;
    clear: both;
+   padding: 9px;
+   position: relative;
 }
 
 .wide-footer {
@@ -556,6 +558,60 @@ span.smallTitle {
   width:75%;
   position:relative;
   left:200px;
+}
+
+#footer .left, #footer .middle, #footer .right {
+  white-space: nowrap;
+}
+
+#footer .left {
+  float: left;
+  width: 20%;
+  text-align: left;
+}
+
+/*#footer .middle {
+  width: 40%;
+  text-align: center;
+}*/
+
+#footer .right {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+
+#footer .bottom {
+  display: inline-block;
+  clear: both;
+  position: absolute;
+  top: 0.8em;
+  /*width: 82%;*/
+  left: 20%;
+}
+
+#footer.skinny-footer .bottom {
+  left: 20%;
+}
+
+#footer.wide-footer .bottom {
+  left: 30%;
+}
+
+#footer .build-info {
+  text-indent: 10px;
+}
+
+#footer .release {
+  margin-left: 20px;
+}
+
+#footer .copyright {
+  margin-left: 4px;
+}
+
+#footer .contact {
+  font-size: 1.4em;
 }
 
 .site-icons li { display: inline; }
@@ -890,9 +946,20 @@ tr.headerrow th {
 
 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      =Contact modal popup 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.contact-us ul {
+  list-style: disc outside none;
+  margin: 1em 0em;
+  padding-left: 1em;
+}
+
+.contact-us td {
+  vertical-align: top;
+}
+
+
 
 /* THE END */
 /* under this, commented out */
-
-
-
