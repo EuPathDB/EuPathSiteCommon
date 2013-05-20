@@ -105,9 +105,9 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-.fold-change .param-group.empty,
+.fold-change .param-group.dynamic,
 .fold-change .param-group .group-detail {
-  width: 900px;
+  width: 980px;
   margin: auto;
 }
 
@@ -141,6 +141,18 @@
   padding: 1px;
 }
 
+.fold-change .fold-change-img .overlay {
+  background-color: lightgrey;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  filter: Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+.fold-change .param {
+  display: inline-block;
+}
 .fold-change .param-control .param {
   width: 93%; /* force wrap */
   text-indent: -2em;
@@ -148,9 +160,10 @@
   left: 2em;
 }
 
-.fold-change .param-group.empty .group-detail {
+.fold-change .param-group.dynamic .group-detail {
   display: inline-block;
   width: 49%;
+  border-right: 1px inset #AAA;
 }
 
 .fold-change .param-item {
@@ -179,11 +192,91 @@
   vertical-align: top;
 }
 
+.fold-change .param-line {
+  padding: 0.2em;
+  font-size: larger;
+}
+.fold-change .text .prompt {
+  font-weight: bold;
+}
+.reference, .comparison {
+  width: 40%;
+  padding: 1em;
+  margin-bottom: 8px;
+  border: 1px solid #AAA;
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+.reference,
+.reference div:nth-child(2) .jstree-classic.jstree-focused {
+  /* background-color: rgb(200, 217, 243); */
+  background-color: whitesmoke;
+}
+.comparison,
+.comparison div:nth-child(2) .jstree-classic.jstree-focused {
+  /* background-color: rgb(240, 179, 179); */
+  background-color: whitesmoke;
+}
+.reference-label {
+  color: rgb(29,113,194);
+}
+.comparison-label {
+  color: rgb(128,22,32);
+}
+.reference-label, .comparison-label {
+  border: 1px solid #AAA;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  background-color: whitesmoke;
+  font-weight: bold;
+  padding: 2px 4px;
+  margin-top: 2px;
+  position: relative;
+  top: 1px;
+}
+.reference .text, .comparison .text {
+  font-size: small;
+}
+.reference .param-line, .comparison .param-line {
+  background-color: white;
+  border: 1px solid #AAA;
+  border-radius: 4px;
+  padding: 0.4em;
+  margin-top: 1em;
+}
+.reference .param-multiPick.dependentParam table,
+.comparison .param-multiPick.dependentParam table {
+  width: 100%;
+}
+.reference .param-multiPick.dependentParam ul,
+.reference .checkbox-tree,
+.comparison .param-multiPick.dependentParam ul,
+.comparison .checkbox-tree {
+  max-height: 100px;
+  background: white;
+  overflow-y: scroll;
+  border-radius: 4px;
+  border: 1px solid #AAA;
+}
+.samples {
+  width: 900px;
+  margin: 0 auto;
+}
+#min_max_avg_ref, #min_max_avg_comp {
+  font-weight: bold !important;
+}
+#fold_change {
+  width: 2em;
+}
+.fold-change .help-link {
+  padding-right: 4px;
+}
+
 /* clearfix */
-.fold-change .param-group.empty:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.fold-change .param-group.empty { display: inline-block; }
-* html .fold-change .param-group.empty { height:1%; }
-.fold-change .param-group.empty { display:block; }
+.fold-change .param-group.dynamic:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.fold-change .param-group.dynamic { display: inline-block; }
+* html .fold-change .param-group.dynamic { height:1%; }
+.fold-change .param-group.dynamic { display:block; }
 
 /*
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
