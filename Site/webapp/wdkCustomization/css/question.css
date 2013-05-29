@@ -105,8 +105,7 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-.fold-change .param-group.dynamic,
-.fold-change .param-group .group-detail {
+.fold-change {
   width: 980px;
   margin: auto;
 }
@@ -115,39 +114,25 @@
   padding-left: 1em;
 }
 
-.fold-change .fold-change-wrapper {
+.fold-change .fold-change-graphic {
   display: inline-block;
   vertical-align: top;
   width: 48%;
   padding-right: 1em;
 }
 
-.fold-change .fold-change-wrapper > div {
+.fold-change .fold-change-graphic > div {
   float: right;
 }
 
 .fold-change .fold-change-img {
-  /*
-  position: absolute;
-  left: 60%;
-  top: 10%;
-  float: left;
-  */
   position: relative;
   width: 402px;
   height: 302px;
   border: 1px solid #AAA;
   border-radius: 4px;
   padding: 1px;
-}
-
-.fold-change .fold-change-img .overlay {
-  background-color: lightgrey;
-  border-radius: 4px;
-  height: 100%;
-  width: 100%;
-  filter: Alpha(Opacity=90);
-  opacity: 0.9;
+  margin-top: 3em;
 }
 
 .fold-change .param {
@@ -160,7 +145,7 @@
   left: 2em;
 }
 
-.fold-change .param-group.dynamic .group-detail {
+.fold-change .fold-change-params {
   display: inline-block;
   width: 49%;
   border-right: 1px inset #AAA;
@@ -182,6 +167,11 @@
 .fold-change .fold-change-help {
   margin-top: 1em;
   width: 400px;
+}
+
+.fold-change .fold-change-help.detailed-help {
+  margin-top: 0em;
+  text-align: center;
 }
 
 .fold-change .fold-change-help p {
@@ -223,7 +213,7 @@
 .comparison-label {
   color: rgb(128,22,32);
 }
-.reference-label, .comparison-label {
+.samples .reference-label, .samples .comparison-label {
   border: 1px solid #AAA;
   border-bottom: none;
   border-radius: 4px 4px 0 0;
@@ -272,17 +262,18 @@
   padding-right: 4px;
 }
 
-/* clearfix */
-.fold-change .param-group.dynamic:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.fold-change .param-group.dynamic { display: inline-block; }
-* html .fold-change .param-group.dynamic { height:1%; }
-.fold-change .param-group.dynamic { display:block; }
-
 /*
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     CSS rules for Fold Change Expression graph = END
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+.formula { font-style: italic;font-weight:bold; }
+.formula .left-hand-side, .formula .right-hand-side { display: inline-block; vertical-align: middle; }
+.formula .left-hand-side::after { content: " ="; }
+.formula .right-hand-side { padding-left: 0.4em; }
+.formula .division > div { text-align: center; padding: 0px 4px; }
+.formula .division .numerator { border-bottom: 1px solid; }
 
 .group-detail.ui-widget-content {
   background: whiteSmoke;
