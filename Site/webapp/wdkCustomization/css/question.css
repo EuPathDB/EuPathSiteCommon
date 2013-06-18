@@ -202,6 +202,11 @@
   margin: 0;
 }
 
+.fold-change .caption {
+  width: 400px;
+  font-style: italic;
+  font-family: serif;
+}
 .fold-change .fold-change-help {
   margin-top: 1em;
   width: 400px;
@@ -222,15 +227,17 @@
 .fold-change .param-line {
   padding: 0.2em;
   font-size: larger;
+  line-height: 1.4;
 }
-.fold-change .text .prompt {
+.fold-change .text .prompt,
+.fold-change .text.prompt {
   font-weight: bold;
 }
 .reference, .comparison {
   width: 43%;
   padding: 1em;
-  margin-bottom: 8px;
-  border: 1px solid #AAA;
+  margin-bottom: 1em;
+  border: 1px solid #EEE;
   border-radius: 4px;
 }
 .reference {
@@ -248,10 +255,10 @@
   background-color: whitesmoke;
 }
 .reference-label {
-  color: rgb(29,113,194);
+  color: rgb(39,136,194);
 }
 .comparison-label {
-  color: rgb(128,22,32);
+  color: rgb(158,19,22);
 }
 .fold-change-params .samples .samples-tab {
   border: 1px solid #AAA;
@@ -274,26 +281,34 @@
   padding: 0.4em;
   margin-top: 1em;
 }
-.reference .param-multiPick.dependentParam table,
-.comparison .param-multiPick.dependentParam table {
+.param-multiPick.dependentParam table {
   width: 100%;
 }
-.reference .param-multiPick.dependentParam ul,
-.reference .checkbox-tree,
-.comparison .param-multiPick.dependentParam ul,
-.comparison .checkbox-tree {
+.fold-change #samples_fc_comp_genericaaa,
+.fold-change #samples_fc_ref_genericaaa {
+  background: white;
+  border: 1px solid #AAA;
+  border-radius: 4px;
+}
+
+.fold-change .param-multiPick.dependentParam ul,
+.fold-change .checkbox-tree {
   max-height: 100px;
   background: white;
   overflow-y: scroll;
-  border-radius: 4px;
   border: 1px solid #AAA;
+}
+.fold-change .checkbox-tree {
+  margin-left: 3px;
+  margin-right: 3px;
 }
 .fold-change-params .samples {
   width: 900px;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 #min_max_avg_ref, #min_max_avg_comp {
   font-weight: bold !important;
+  margin: 0px;
 }
 #fold_change {
   width: 2em;
@@ -306,8 +321,9 @@
 }
 
 .fold-change-graphic .title {
-  position: relative;
-  top: 24px;
+  /*position: relative;
+  top: 24px;*/
+  padding-top: 4px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -384,7 +400,7 @@
 
 .fold-change-graphic .operation-line {
   left: -198px;
-  width: 215%;
+  width: 184%;
   border-bottom: 2px dashed;
   position: relative;
   top: 0.5em;
@@ -394,7 +410,7 @@
   display: inline-block;
   position: relative;
   height: 35%;
-  top: 70px;
+  top: 42px;
   left: 21px;
   width: 180px;
 }
@@ -402,7 +418,7 @@
   display: inline-block;
   position: relative;
   height: 35%;
-  top: 70px;
+  top: 42px;
   left: 34px;
   width: 180px;
 }
@@ -417,7 +433,7 @@
 .fold-change-graphic .left-samples .operation-line,
 .fold-change-graphic .right-samples .operation-line {
   left: -113px;
-  width: 110%;
+  width: 92%;
   top: 0.3em;
 }
 .fold-change-graphic .left-samples .reference-samples .operation,
@@ -456,18 +472,40 @@
 
 .fold-change .fold-change-label {
   position: relative;
-  text-align: right;
-  top: 30%;
-  width: 80%;
-  height: 76px;
+  top: 22%;
+  height: 79px;
   font-weight: bold;
-  font-size: 120%;
+  font-family: serif;
+  text-align: left;
+  margin-left: 89px;
+  border-left: 171px solid lightgoldenrodyellow;
 }
 .fold-change .up-or-down-regulated .fold-change-label {
   top: 15%;
-  width: 90%;
   height: 56px;
   font-size: 90%;
+  margin-left: 0px;
+  border-left: 103px solid lightgoldenrodyellow;
+}
+.fold-change .fold-change-label .bracket {
+  font-size: 95px;
+  position: relative;
+  top: -14px;
+  left: -14px;
+}
+.fold-change .up-or-down-regulated .fold-change-label .bracket {
+  font-size: 72px;
+  top: -12px;
+}
+.fold-change .fold-change-label .label {
+  position: relative;
+  top: -35px;
+  left: -12px;
+  font-style: italic;
+  white-space: nowrap;
+}
+.fold-change .up-or-down-regulated .fold-change-label .label {
+  top: -27px;
 }
 
 .fold-change .fold-change-label > div {
