@@ -47,9 +47,8 @@
 <!--
     <div>
 -->
-        <div class="group-detail" style="display:block"> 
-
-    				<jsp:getProperty name="wdkQuestion" property="description"/>
+    <div class="group-detail" style="display:block"> 
+      ${wdkQuestion.description}
     </div>
 </div>
 
