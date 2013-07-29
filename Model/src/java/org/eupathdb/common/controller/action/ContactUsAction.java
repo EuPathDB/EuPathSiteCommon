@@ -46,6 +46,9 @@ public class ContactUsAction extends WdkAction {
 	/** CC addresses */
 	private static final String PARAM_ADDCC = "addCc";
 
+	/** referring URL **/
+	private static final String PARAM_REFERRER = "referrer";
+
 	/** Attachments */
 	private static final String PARAM_ATTACHMENT_PREFIX = "attachment";
 	private static final int PARAM_ATTACHMENT_COUNT = 3;
@@ -56,7 +59,8 @@ public class ContactUsAction extends WdkAction {
     .addParam(PARAM_REPLY, new ParamDef(Required.REQUIRED))
     .addParam(PARAM_SUBJECT, new ParamDef(Required.REQUIRED))
     .addParam(PARAM_CONTENT, new ParamDef(Required.REQUIRED))
-    .addParam(PARAM_ADDCC, new ParamDef(Required.OPTIONAL)).toMap();
+    .addParam(PARAM_ADDCC, new ParamDef(Required.OPTIONAL))
+    .addParam(PARAM_REFERRER, new ParamDef(Required.OPTIONAL)).toMap();
 
   static {
     for (int i = 1; i <= PARAM_ATTACHMENT_COUNT; i++) {
@@ -93,6 +97,7 @@ public class ContactUsAction extends WdkAction {
 	  String subject = params.getValueOrEmpty(PARAM_SUBJECT);
 	  String content = params.getValueOrEmpty(PARAM_CONTENT);
     String addCc = params.getValueOrEmpty(PARAM_ADDCC);
+    String referrer = params.getValueOrEmpty(PARAM_REFERRER);
 
     ArrayList<DataHandler> attachmentList = new ArrayList<DataHandler>();
     for (int i = 1; i <= PARAM_ATTACHMENT_COUNT; i++) {
@@ -134,7 +139,7 @@ public class ContactUsAction extends WdkAction {
 	      "Privacy preferences: " + "\n" +
 	      "Uid: " + uid + "\n" +
 	      "Browser information: " + reqData.getBrowser() + "\n" +
-	      "Referrer page: " + reqData.getReferrer() + "\n" +
+	      "Referrer page: " + referrer + "\n" +
 	      "WDK Model version: " + version;
 	  
 	  String autoContent = "****THIS IS NOT A REPLY**** \nThis is an automatic" +
@@ -142,7 +147,7 @@ public class ContactUsAction extends WdkAction {
 	      " know that we have received your email and will get back to you as" +
 	      " soon as possible. Thanks so much for contacting us!\n\nThis was" +
 	      " your message:\n\n---------------------\n" + content +
-	      "\n---------------------\n\n";
+	      "\n---------------------";
 	  
 	  String redmineMetaInfo = "Project: usersupportrequests\n" +
 	      "Category: " + website + "\n" +
@@ -152,15 +157,15 @@ public class ContactUsAction extends WdkAction {
 	  try {
 	    // send auto-reply
       Utilities.sendEmail(wdkModel, reply, supportEmail, subject,
-          escapeHtml(metaInfo + "\n\n" + autoContent), addCc, attachments);
+          escapeHtml(metaInfo + "\n\n" + autoContent + "\n\n"), addCc, attachments);
 
       // send support email
       Utilities.sendEmail(wdkModel, supportEmail, reply, subject,
-          escapeHtml(metaInfo + "\n\n" + content), null, attachments);
+          escapeHtml(metaInfo + "\n\n" + content + "\n\n"), null, attachments);
 
       // send redmine email
       Utilities.sendEmail(wdkModel, redmineEmail, reporterEmail, subject,
-          escapeHtml(redmineMetaInfo + "\n\n" + content), null, attachments);
+          escapeHtml(redmineMetaInfo + "\n\n" + content + "\n\n"), null, attachments);
 
       // not using Ajax at the moment due to file uploads
     	// return getJsonResult(SUCCESS_AJAX_RESPONSE,

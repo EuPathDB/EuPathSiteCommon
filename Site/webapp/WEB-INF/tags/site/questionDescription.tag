@@ -47,16 +47,15 @@
 <!--
     <div>
 -->
-        <div class="group-detail" style="display:block"> 
-
-    				<jsp:getProperty name="wdkQuestion" property="description"/>
+    <div class="group-detail" style="display:block"> 
+      ${wdkQuestion.description}
     </div>
 </div>
 
 <hr>
 
 <%-- get the attributions of the question if not EuPathDB --%>
-<c:if test = "${project != 'EuPathDB' && project != 'FungiDB'}">
+<c:if test = "${project != 'EuPathDB'}">
   <c:set var="ds_ref_questions" value="${requestScope.ds_ref_questions}" />
   <c:choose>
     <c:when test="${fn:length(ds_ref_questions) == 0}">
