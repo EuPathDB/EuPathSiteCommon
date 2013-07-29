@@ -66,12 +66,12 @@ wdk.util.namespace("eupath.setup", function(ns, $) {
             ccAddrs = this.addCc.value.split(/,\s*(?=\w)/);
 
         // validate required fields
-        var missingFields = _.filter(requiredFields, function(field) {
+        var missingFields = requiredFields.filter(function(field) {
           return !form[field].value;
         });
 
         if (missingFields.length) {
-          _.each(missingFields, function(field) {
+          missingFields.forEach(function(field) {
             $(form[field]).after("<span class='wdk-error'>This field is required</span>");
           });
           return;
