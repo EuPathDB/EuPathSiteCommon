@@ -1,0 +1,61 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 =SOCIALMEDIA (about, help, etc.)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/	
+.twitter,
+.facebook,
+.youtube {
+  height: 22px;
+  width: 22px;
+  background: url(../images/social_sprites_22.png) no-repeat;
+  display: inline-block;
+}
+.twitter {
+  background-position: -25px -2px;
+}
+.facebook {
+  background-position: -2px -2px;
+}
+.youtube {
+  background-position: -48px -2px;
+}
+.facebook.small,
+.twitter.small,
+.youtube.small {
+  height: 14px;
+  width: 14px;
+  background: url(../images/social_sprites_14.png) no-repeat;
+  display: inline-block;
+}
+.facebook.small {
+  background-position: -15px 0px ;
+}
+.twitter.small {
+  background-position: 0px 0px ;
+}
+.youtube.small {
+  background-position: -30px 0px ;
+}
+.twitter + span,
+.facebook + span,
+.youtube + span {
+  margin-left: 12px;
+}
+.socmedia-link .facebook,
+.socmedia-link .twitter,
+.socmedia-link .youtube {
+  margin-left: 2px;
+}
+#sidebar .socmedia-link,
+#menu_lefttop .socmedia-link {
+  list-style: none;
+  padding-top: 2px;
+}
+#sidebar .twitter,
+#sidebar .facebook,
+#sidebar .youtube,
+#menu .twitter,
+#menu .facebook,
+#menu .youtube {
+  position: relative;
+  top: 2px;
+}
