@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '../ApiCommonWebsite/Site/htdocs/assets/css',
-          src: ['*.less'],
+          src: ['*.bootstrap.less'],
           //dest: process.env.HTML + '/assets/css',
           dest: 'build',
           ext: '.css'

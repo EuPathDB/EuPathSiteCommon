@@ -25,22 +25,6 @@
       <property name="version" value="alter-views"/>
     </ant>
   </target>
-
-  <target name="nodeDependencies">
-    <echo>Installing grunt-cli</echo>
-    <exec dir="${targetDir}"
-          executable="npm">
-      <arg line="--prefix ${targetDir}"/>
-      <arg line="install"/>
-      <arg line="grunt-cli"/>
-      <arg line="-g"/>
-    </exec>
-    <echo>Installing local npm modules</echo>
-    <exec dir="${projectsDir}/${project}"
-          executable="npm">
-      <arg line="install"/>
-    </exec>
-  </target>
   
   <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
   <!-- oooooooooooooooooooooooooo    Checkout    oooooooooooooooooooooooooo -->
@@ -65,7 +49,6 @@
   <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
   <target name="EuPathSiteCommon-Installation" depends="WDK-Installation,
-                                                        nodeDependencies,
                                                         EuPathSiteCommon/Site-Installation,
                                                         EuPathSiteCommon/Model-Installation,
                                                         EuPathSiteCommon/Util-Installation,
@@ -127,10 +110,31 @@
       <property name="component" value="Site"/>
     </ant>
 
-    <exec dir="${projectsDir}/${project}" executable="grunt">
+    <antcall target="EuPathSiteCommon/Site-Npm"/>
+    <antcall target="EuPathSiteCommon/Site-Grunt"/>
+
+  </target>
+
+  <target name="EuPathSiteCommon/Site-Grunt">
+    <exec dir="../EuPathSiteCommon/Site" executable="grunt">
       <arg line="--no-color"/>
     </exec>
+  </target>
 
+  <target name="EuPathSiteCommon/Site-Npm">
+    <available property="grunt.present" file="${targetDir}/bin/grunt"/>
+    <antcall target="EuPathSiteCommon/Site-InstallGrunt"/>
+
+    <exec dir="../EuPathSiteCommon/Site" executable="npm">
+      <arg line="install"/>
+    </exec>
+  </target>
+
+  <target name="EuPathSiteCommon/Site-InstallGrunt" unless="grunt.present">
+    <exec dir="${targetDir}" executable="npm">
+      <arg line="--prefix ${targetDir}"/>
+      <arg line="install grunt-cli -g"/>
+    </exec>
   </target>
  
   <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
