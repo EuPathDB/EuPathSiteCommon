@@ -22,6 +22,14 @@ a:hover, a:active, div.divlink:hover {
   color: @link-color-hover;
 }
 
+a.opposite:link, a.opposite:visited {
+    color: @link-color-hover;
+}
+
+a.opposite:hover, a.opposite:active {
+    color: @link-color;
+}
+
 a[name]:link {
   color: @text-color;
 }
@@ -47,11 +55,11 @@ a[name]:hover, a[name]:active {
 }
 
 #header_rt {
-   color: #6e549c; // need to set to variable
+   color: @siteheader-color; // need to set to variable
 }
 
 #header_rt a:link, #header_rt a:visited {
-   color: @table-head-color-other;
+   color: @siteheader-link-color;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,11 +123,11 @@ a[name]:hover, a[name]:active {
 }
 
 #menu ul ul a:link, #menu ul ul a:visited{
-  border-bottom-color: @header-color;
+  border-bottom-color: @heading-color;
 }
 
 #menu ul ul a:hover, #menu ul ul a:active{
-  border-bottom-color: @header-color;
+  border-bottom-color: @heading-color;
   color: @menu-child-color-hover;
 }
 
@@ -144,7 +152,7 @@ a[name]:hover, a[name]:active {
 
 
 .search-box .textbox{
-  border: solid 1px @border-color;
+  border: solid 1px #b3b3b3;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,15 +160,15 @@ a[name]:hover, a[name]:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 h1 {
-  color: @header-color;
+  color: @heading-color;
 }
 
 h2 {
-    color: @header-color;
+    color: @heading-color;
 }
 
 .h2center, .h3left,.h3center, .h4left {
-    color: @header-color;
+    color: @heading-color;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -328,7 +336,7 @@ div.colCopy {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 #dataset-records th {
-  color: @header-color;
+  color: @heading-color;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
