@@ -892,7 +892,7 @@ th.mythStyle {
 }
 
 .vennFilter.vennDiagram ul li {
-   margin-top: 14px;
+   margin-top: 7px;   /* 14px;  */
 }
 
 .top_label {
@@ -1038,7 +1038,7 @@ tr.headerrow th {
 
 .contact-us .wdk-toggle-content {
   border: none;
-  width: 500px;
+  width: 650px;
 }
 
 .contact-us ul {

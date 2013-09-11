@@ -17,17 +17,13 @@
     <imp:simpleToggle name="Reporting a problem?" show="false">
       <jsp:attribute name="content">
         <div>
-          The following details will help us determine the cause more quickly:
+          Providing any of the following details will help us determine the problem:
           <ul>
-            <li>The URL of the offending page</li>
-            <li>
-              Exact steps to recreate the problem.
-              <i>(If possible, please try to recreate the problem
-                yourself so you can give us an exact recipe.)</i>
-            </li>
-            <li>The full error message, if any.</li>
-            <li>Any other web browsers have you tried.</li>
-            <li>If you cleared your cache and/or cookies.</li>
+            <li>The URL of the offending page.</li>
+            <li>The error message you receive. In fact, below you can attach a screenshot of the error message.</li>
+            <li>The sequence of steps that generated the error. Please try to recreate the problem and send us the exact steps.</li>
+            <li>The behavior of the same steps after you clear your browser’s cookies and cache.</li>
+            <li>The behavior of the same steps in a different internet browser.</li>
           </ul>
         </div>
       </jsp:attribute>
