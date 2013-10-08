@@ -1,0 +1,142 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 =HOME Page:  BUBBLE Lists
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#bubbles {
+
+  & {
+    clear: both;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  .threecolumndiv {
+    width: 247px;
+    margin: auto;
+  }
+
+  .threecolumndivimg {
+    display: block;
+  }
+
+  .head {
+    letter-spacing: .06em;
+    text-align: center;
+    width: 219px;
+    color: white;
+    font-size: 15px;
+    line-height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid;
+    margin: 0 13px;
+  }
+
+  .gradient-with-border (@color) {
+    @alt-color: softlight(@color, #ffffff);
+    background-color: @color;
+    background-image: linear-gradient(to top, @color, @alt-color);
+    border-color: @alt-color;
+  }
+
+  li:nth-child(1) .head ,
+  td:nth-child(1) .head {
+    .gradient-with-border(exclusion(@link-color, #444444));
+  }
+
+  li:nth-child(2) .head ,
+  td:nth-child(2) .head {
+    .gradient-with-border(exclusion(average(@link-color, @link-color-hover), #444444));
+  }
+
+  li:nth-child(3) .head ,
+  td:nth-child(3) .head {
+    .gradient-with-border(exclusion(@link-color-hover, #444444));
+  }
+
+  .info {
+     width: 209px;
+     min-height: 301px;
+     height: 100%;
+     background-image: url(../images/bubble_backgrnd.png);
+     background-repeat: repeat-y;
+     text-align: left;
+     padding-top: 2px;
+     padding-right: 19px;
+     padding-bottom: 0px;
+     padding-left: 19px;
+  }
+
+  .info ul {
+    height: 100%;
+  }
+  .info li {
+    line-height: 1.5em;
+  /*	list-style-image: url(../images/cir_bullet.png);*/
+    list-style-type: none;
+    margin-left: 7px;
+  }
+  .info li ul {
+    margin: 4px 0;
+  }
+  .info li ul li {
+  /*	list-style-image: url(../images/cir_bullet2.png);*/
+    border-bottom:1px solid lightgrey;
+    list-style-type: none;
+    margin-left: 22px;
+  /*	font-size: 11px; */
+    line-height: 1.1em;
+  }
+
+  .bubble-header {
+    margin-bottom: -4px;
+  }
+
+  .infobottom {
+    width: 209px;
+    min-height: 35px;    /* trying to keep buckest same size */
+    background-image: url(../images/bubble_bottom.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 2px;
+    padding-right: 19px;
+    padding-bottom: 0px; 
+    padding-left: 19px;
+  }
+
+
+
+  .detail_link {
+  /*	border: 2px solid #d8d8d8; */
+    display: inline;
+    left: -9999px;
+    position: absolute;
+  }
+
+  .detail_link:link, .detail_link:visited{
+    color: blue;    /* #808080; */
+    text-decoration: underline;
+  }
+
+  .heading_list li:hover a.heading + a.detail_link, a.detail_link:hover {
+    left: -2px;
+    position: relative;
+  }
+
+  & > li {
+    width: 30%;
+    margin: 10px;
+    padding: 2px;
+    float: left;
+  }
+
+  /* for Internet Explorer */
+  /*\*/
+  * html #bubbles .info {
+    height: 240px;
+  }
+  /**/
+}

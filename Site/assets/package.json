@@ -1,0 +1,23 @@
+{
+  "name": "eupath_assets",
+  "version": "0.1.0",
+  "description": "Assets server and build tool for EuPathDB websites",
+  "author": "eupathdb",
+  "license": "BSD-2-Clause",
+  "dependencies": {},
+  "bin": "./bin/cli.js",
+  "devDependencies": {
+    "glob": "~3.2.6",
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.2.8",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-symlink": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "load-grunt-tasks": "~0.1.0",
+    "grunt-es6-module-transpiler": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

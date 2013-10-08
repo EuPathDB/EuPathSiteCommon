@@ -1,0 +1,54 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 =SUMMARY TABLES 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* used by Expression graphs (fix for text alignment bug) */
+td.centered {
+       vertical-align: middle;
+       padding: 20px;
+}
+td.top {
+       vertical-align: top;
+}
+
+
+table.mytableStyle {
+	empty-cells:show;
+	border-width:1px;
+	border-style:solid;	   /* solid, none, inset, outset, dashed, solid, */
+	border-color:black;
+	border-collapse:collapse;  /*separate */
+/*	border-spacing:2px;  */    /* only makes sense when border-collapse is separate
+	table-layout: auto;        /* fixed */
+}
+tr.mytdStyle {
+	text-align:center;
+
+}
+tr.mythStyle {
+	background-color:lightgrey;
+	text-align:center;
+	font-weight:bold;
+}
+td.mythStyle,td.mytdStyle,th.mythStyle {
+	vertical-align:middle;
+	border-width:1px;
+	border-style:inset;
+	border-color:gray;
+	-moz-border-radius:0px;
+	padding:3px;
+	background-color:white;
+}
+th.mythStyle {
+	font-weight:bold;
+	background-color:lightgrey;
+	border-bottom: 3px solid grey;
+	cursor: pointer; 
+/*	if we add back the sort icons in data summary .....
+	padding:0;
+	vertical-align:bottom; */
+
+}
+
+	#data-summary_info { font-weight:bold; }
+	#data-summary_filter { font-weight:bold; }
+	#gene-metrics_filter { font-weight:bold; }

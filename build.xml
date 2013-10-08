@@ -80,6 +80,9 @@
       <property name="project" value="EuPathSiteCommon"/>
       <property name="component" value="Site"/>
     </ant>
+
+    <available property="grunt.present" file="${targetDir}/bin/grunt"/>
+    <antcall target="installGrunt"/>
   </target>  
 
   <target name="EuPathSiteCommon/View-Installation">
@@ -94,6 +97,13 @@
       <property name="project" value="EuPathSiteCommon"/>
       <property name="component" value="Util"/>
     </ant>
+  </target>
+
+  <target name="installGrunt" unless="grunt.present">
+    <exec dir="${targetDir}" executable="npm">
+      <arg line="--prefix ${targetDir}"/>
+      <arg line="install grunt-cli -g"/>
+    </exec>
   </target>
 
   <target name="install-projects.xml" unless="projects.xml.present">
@@ -116,7 +126,14 @@
       <property name="component" value="Site"/>
     </ant>
 
+    <ant target="webComponentPartCopy">
+      <property name="componentDir" value="${projectsDir}/EuPathSiteCommon/Site"/>
+      <property name="part" value="assets"/>
+      <property name="to" value="${htdocsTargetDir}/../assets"/>
+    </ant>
+
   </target>
+  
  
   <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
   <!-- oooooooooooooooooooooooooo  Distributable  ooooooooooooooooooooooooo -->

@@ -1,0 +1,346 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =TAGS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+  background-image: url("/assets/images/@{model}/background_s.jpg");
+}
+
+.coloredtext { // no link
+  color: @link-color-hover;
+}
+
+a:link, div.divlink {
+  color: @link-color;
+}
+
+a:visited {
+    color: @link-color-visited;
+}
+
+a:hover, a:active, div.divlink:hover {
+  color: @link-color-hover;
+}
+
+a.opposite:link, a.opposite:visited {
+    color: @link-color-hover;
+}
+
+a.opposite:hover, a.opposite:active {
+    color: @link-color;
+}
+
+a[name]:link {
+  color: @text-color;
+}
+
+a[name]:visited {
+  color: @text-color;
+}
+
+a[name]:hover, a[name]:active {
+  color:  @text-color;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =HEADER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#header {
+  background-image: url("../images/@{model}/backgroundtop_s.jpg");
+}
+
+#header2 {
+  background-image: url("../images/@{model}/backgroundtop_s.jpg");
+}
+
+#header_rt {
+   color: @siteheader-color; // need to set to variable
+}
+
+#header_rt a:link, #header_rt a:visited {
+   color: @siteheader-link-color;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =HEADER DROPDOWN MENU
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#nav-top {
+  color: @navtop-link-color;
+}
+
+#nav-top a:link, #nav-top a:visited {
+  color: @navtop-link-color;
+}
+
+#nav-top li ul {  // second-level lists
+  background-image: url("../images/@{model}/footer.png");
+  border-color:@border-color;
+  list-style-image: url("../images/@{model}/bullet_arrow.gif");
+}
+
+#nav-top li ul a:link, #nav-top li ul a:visited {
+  color: @navtop-link-color;
+}
+
+#nav-top li ul a:hover, #nav-top li ul a:active {
+  color: @navtop-link-color-active;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =HOME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#bubbles .info {
+  min-height: @bubble-height;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =STRUCTURE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#contentcolumn {
+  background-image: url("../images/@{model}/footer.png");
+  border: 1px solid @border-color;
+}
+
+#contentcolumn2 {
+  background-image: url("../images/@{model}/footer.png");
+  border: 1px solid @border-color;
+}
+
+#main_tools {
+  background-image: url("../images/@{model}/tools_bckgnd.jpg");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =Top Menu Bar Dropdown List
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#menu a:hover, #menu a:active, #strategy_tabs #selected a {
+  color: @menu-parent-color-hover;
+}
+
+#menu ul ul a:link, #menu ul ul a:visited{
+  border-bottom-color: @heading-color;
+}
+
+#menu ul ul a:hover, #menu ul ul a:active{
+  border-bottom-color: @heading-color;
+  color: @menu-child-color-hover;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =Menu Lists
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.menu_lefttop_drop {
+   border-color: @border-color;
+}
+
+#menu_lefttop a.heading {
+  background-image: url("../images/@{model}/menu_lft2.png");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =Search Boxes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.search-box{
+    border: solid 1px @border-color;
+ }
+
+
+.search-box .textbox{
+  border: solid 1px #b3b3b3;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =Fonts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+h1 {
+  color: @heading-color;
+}
+
+h2 {
+    color: @heading-color;
+}
+
+.h2center, .h3left,.h3center, .h4left {
+    color: @heading-color;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =FOOTER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#footer{
+   background-image: url("../images/@{model}/footer.png");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =TABLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+td.headerrow {
+  color: @table-head-color;
+  background-image: url("../images/@{model}/trheader.png");
+}
+
+tr.headerrow {
+  color: @table-head-color;
+}
+
+tr.headerrow th, .flexigrid tr.headerrow th#primary_key:hover {
+  background-image: url("../images/@{model}/trheader.png");
+}
+
+.flexigrid tr.headerrow th:hover {
+  background-image: url("../images/@{model}/trhover.png");
+}
+
+td.subheaderrow {
+  background-image: url("../images/@{model}/trsubhead.png");
+}
+
+tr.subheaderrow th {
+  background-image: url("../images/@{model}/trsubhead.png");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =FOR QUERY GRID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+tr.headerrow2 td{
+        color: @table-head-color;
+  background-image: url("../images/@{model}/trheader.png");
+}
+
+tr.subheaderrow2 td{
+  background-image: url("../images/@{model}/trsubhead.png");
+}
+
+a.queryGridInactive {
+        color:               @muted-color;
+}
+
+a.queryGridActive {
+        color:              @querygrid-color-active;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =END OF TABLES FOR QUERY GRID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+tr.subheaderrow th {
+  border-color: @table-head-border-color;
+}
+
+tr.headerrow th {
+  border-color: @table-head-border-color;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    =RED BUTTON
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =WorkSpace Divs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+div.Workspace {
+  border-color: @workspace-border;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =ABOUT US and HELP PAGES SIDEBAR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.twoColHybLt #sidebar1 {
+  background-image: url("../images/@{model}/aboutus.png");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =WARNING BOXES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =ADVANCED STRATEGY PAGING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =used in contact.do, classic bullet list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   =MISC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+span.marker a:link, span.marker a:visited {
+  color: @marker-link;
+}
+
+#strategy_tabs a:link, #strategy_tabs a:visited {
+    background-color: #e9e6ee;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   = styles for blockUI popups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.blockMsg {
+  border: 1px solid @border-color;
+}
+
+.blockPage {
+  background-image: url("/assets/images/@{model}/footer.png");
+}
+
+.flexigrid div.hDiv {
+  background-image:url("/assets/images/@{model}/trheader.png");
+}
+
+.flexigrid div.hDiv th.thMove {
+  background-image:url("/assets/images/@{model}/trheader.png");
+}
+
+div.colCopy {
+  background-image:url("/assets/images/@{model}/trheader.png");
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   history.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Strategy.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   filter_menu.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#query_form {
+  border: 1px solid @border-color;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   dataset-searches.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#dataset-records th {
+  color: @heading-color;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    default values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@bubble-height: "100%";
