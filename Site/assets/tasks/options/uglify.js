@@ -5,6 +5,8 @@ module.exports = {
     },
   },
   compile: {
-    'tmp/application.min.js': ['tmp/application.min.js']
+    files: {
+      'tmp/application.min.js': ['tmp/application.js']
+    }
   }
 };
