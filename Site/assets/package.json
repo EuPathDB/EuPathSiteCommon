@@ -18,6 +18,8 @@
     "grunt-contrib-uglify": "~0.2.4",
     "load-grunt-tasks": "~0.1.0",
     "grunt-es6-module-transpiler": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-contrib-watch": "~0.5.3",
+    "mold-source-map": "~0.2.0",
+    "resumer": "0.0.0"
   }
 }
