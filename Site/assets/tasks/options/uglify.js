@@ -3,10 +3,13 @@ module.exports = {
     mangle: {
       except: ['jQuery', 'Handlebars', 'wdk']
     },
+    sourceMap: 'tmp/js/application.min.js.map',
+    sourceMappingURL: 'application.min.js.map',
+    sourceMapIn: 'tmp/js/application.js.map'
   },
   compile: {
     files: {
-      'tmp/application.min.js': ['tmp/application.js']
+      'tmp/js/application.min.js': ['tmp/js/application.js']
     }
   }
 };
