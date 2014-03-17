@@ -16,6 +16,8 @@ Sample usage:
                 e="${e}" 
             />
         </c:if>
+
+
 --%>
 <%@ taglib prefix="imp" tagdir="/WEB-INF/tags/imp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -55,8 +57,8 @@ Sample usage:
 <c:choose>
   <c:when test="${ ! fn:containsIgnoreCase(publicHosts, serverName)}">
     <%-- Display for Developer site --%>
-    ${msg}<hr/>
-    <font size="-2">${e}</font>
+    ${msg}<hr>
+    <font size='-2'>${e}</font>
   </c:when>
   <c:otherwise>
     <%-- Display for Public site and send email --%>
@@ -73,13 +75,14 @@ Client Browser: ${header['User-Agent']}
 Client IP: ${pageContext.request.remoteHost}
 Referer URL: ${header['referer']}
 Time: <fmt:formatDate type="both" pattern="dd/MMM/yyyy:H:mm:ss" value="<%=new java.util.Date()%>" />
-    </c:set>
 
+    </c:set>
+    
     <%-- Filter out certain types of embedded errors --%>
     <c:choose>
-      <c:when test="${fn:containsIgnoreCase(body,'java.net.UnknownHostException'}"></c:when>
-      <c:when test="${fn:containsIgnoreCase(body,'java.net.SocketTimeoutException'}"></c:when>
-      <c:when test="${fn:containsIgnoreCase(body,'Problem accessing the absolute URL'}"></c:when>
+      <c:when test="${fn:containsIgnoreCase(body,'java.net.UnknownHostException')}"></c:when>
+      <c:when test="${fn:containsIgnoreCase(body,'java.net.SocketTimeoutException')}"></c:when>
+      <c:when test="${fn:containsIgnoreCase(body,'Problem accessing the absolute URL')}"></c:when>
       <c:otherwise>
         <imp:email 
             to="${to}"
