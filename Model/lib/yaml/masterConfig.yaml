@@ -101,7 +101,7 @@ default:
  toxocommentschema: none
  commentDb.commentSchema: none
  commentDbLink: none
-
+ webServiceMirrorOrtho: none
 #=======================================================================================================
 
 apiSite: 
@@ -114,8 +114,8 @@ apiSite:
  commentDb.maxIdle: 1
  commentDb.minIdle: 1
  commentDb.maxWait: 50
- commentDb.commentSchema: comments2
- commentDb.userLoginSchema: userlogins4
+ commentDb.commentSchema: userlogins5
+ commentDb.userLoginSchema: userlogins5
  commentDb.userLoginDbLink: ${appDb.userDbLink}
  commentDb.userFileSchema: uploads
  commentDb.userFileUploadDir: /var/www/Common/communityFilesMirror
@@ -140,6 +140,7 @@ microsporidiadb: {}
 
 orthomcl:
  modelName: OrthoMCL
+ webServiceMirrorOrtho: /var/www/Common/apiSiteFilesMirror/webServices/OrthoMCL
 
 piroplasmadb: {}
 
