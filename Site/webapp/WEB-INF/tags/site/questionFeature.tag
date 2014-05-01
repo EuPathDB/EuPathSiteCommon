@@ -1,5 +1,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="wdk" tagdir="/WEB-INF/tags/wdk" %>
 <%@ taglib prefix="imp" tagdir="/WEB-INF/tags/imp" %>
 
 <%@ attribute name="question"
@@ -45,7 +46,7 @@
 
 <%-- Provided by WDK:  "NEW" AND "REVISED" ICONS --%>
   <c:otherwise>
-		<wdk:questionFeature question=="${question}" />
+		<wdk:questionFeature question="${question}" />
   </c:otherwise>
 </c:choose>
 
