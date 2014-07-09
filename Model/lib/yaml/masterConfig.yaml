@@ -104,6 +104,9 @@ default:
   commentDb.commentSchema: none
   commentDbLink: none
   webServiceMirrorOrtho: none
+
+  twitter: EuPathDB
+  facebook: pages/EuPathDB/133123003429972
 #=======================================================================================================
 
 production:
@@ -137,7 +140,9 @@ cryptodb: {}
 
 eupathdb: {}
 
-fungidb: {}
+fungidb: 
+  twitter: FungiDB
+  facebook: pages/FungiDB/169472636469487
 
 giardiadb: {}
 
