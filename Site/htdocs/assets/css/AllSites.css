@@ -96,6 +96,53 @@ div.innertube #record-toolbox li {
     margin-top: 2px;
 }
 
+.record-toolbar {
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+.record-toolbar a {
+  margin-right: 1em;
+}
+.record-toolbar .left {
+  float: left;
+}
+.record-toolbar .right {
+  float: right;
+}
+.record-toolbar .left a {
+  margin-right: .6em;
+}
+.record-toolbar .right a {
+  margin-left: .6em;
+}
+.record-toolbar .ui-icon {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.toggle-section {
+  margin: 2px 0;
+}
+.toggle-section.ui-accordion .ui-accordion-header {
+  background: #efefef;
+  color: black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 0;
+  font-family: Arial, Helvetica;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.toggle-section.ui-accordion .ui-accordion-header,
+.toggle-section.ui-accordion .ui-accordion-content {
+  border-radius: 0;
+}
+
+#profileContent img {
+  min-width: 425px;
+}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =HOME Page:  BUBBLE Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
