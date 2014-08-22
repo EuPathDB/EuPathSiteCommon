@@ -24,7 +24,7 @@
 <!-- questionFeature adds icons and tutorials -->
 <!-- having questionFeature as part of the title means it cannot be used for banners; use the extraBanner tag for that -->
 <c:if test="${hideTitle == false}">
-  <h1 class="ui-helper-clearfix">Identify ${recordName} based on ${wdkQuestion.displayName}
+  <h1 class="ui-helper-clearfix">Search for ${recordName} based on ${wdkQuestion.displayName}
     <imp:questionFeature question="${wdkQuestion}" refer="questionPage"/>
   </h1>
 </c:if>
