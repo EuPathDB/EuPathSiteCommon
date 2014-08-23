@@ -104,7 +104,15 @@ default:
   commentDb.commentSchema: none
   commentDbLink: none
   webServiceMirrorOrtho: none
+
+  twitter: EuPathDB
+  facebook: pages/EuPathDB/133123003429972
 #=======================================================================================================
+
+production:
+  appDb.maxIdle: 10
+  userDb.maxIdle: 10
+  commentDb.maxIdle: 10
 
 apiSite:
   modelName: apiCommonModel
@@ -132,7 +140,9 @@ cryptodb: {}
 
 eupathdb: {}
 
-fungidb: {}
+fungidb: 
+  twitter: FungiDB
+  facebook: pages/FungiDB/169472636469487
 
 giardiadb: {}
 
@@ -155,3 +165,4 @@ toxodb:
 trichdb: {}
 
 tritrypdb: {}
+
