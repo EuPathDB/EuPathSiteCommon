@@ -106,6 +106,7 @@ default:
   webServiceMirrorOrtho: none
 
   twitter: EuPathDB
+  twitterWidgetId: 344817818073714691
   facebook: pages/EuPathDB/133123003429972
 #=======================================================================================================
 
@@ -142,6 +143,7 @@ eupathdb: {}
 
 fungidb: 
   twitter: FungiDB
+  twitterWidgetId: 479835314844758017
   facebook: pages/FungiDB/169472636469487
 
 giardiadb: {}
