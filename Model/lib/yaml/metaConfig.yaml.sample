@@ -38,7 +38,7 @@ required:
  tricURL: http://trichdb.org/trichdb/
  trypURL: http://tritrypdb.org/tritrypdb/
 
- # this needed in all sites BUT the portal (in the portal this value would cause a livelock)
+ # this needed in all sites (not used in portal currenty)
  myURL: http://hostdb.org/hostdb/
 
 
