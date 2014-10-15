@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.eupathdb.common.model.report;
 
 import java.io.BufferedReader;
@@ -40,11 +37,12 @@ import org.gusdb.wdk.model.record.attribute.TextAttributeField;
  * @author xingao, steve fischer
  * 
  *         this command generates the data into detail table.
+ *         Do not use this one, use the one in ApiCommonShared/Model instead.
  * 
  */
+@Deprecated
 public class DetailTableLoader extends BaseCLI {
 
-    private static final String ARG_PROJECT_ID = "model";
     private static final String ARG_SQL_FILE = "sqlFile";
     private static final String ARG_RECORD = "record";
     private static final String ARG_TABLE_FIELD = "field";
@@ -111,7 +109,7 @@ public class DetailTableLoader extends BaseCLI {
     /*
      * (non-Javadoc)
      * 
-     * @see org.gusdb.wsf.util.BaseCLI#invoke()
+     * @see org.gusdb.fgputil.BaseCLI#invoke()
      */
     @Override
     public void execute() throws Exception {
