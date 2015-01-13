@@ -65,13 +65,29 @@
 </c:if>
 <%-- end hardcoded message only for alpha sites --%>
 
+<!-- ================== ICEMR SITES ============ -->
+<c:if test="${
+    fn:startsWith(pageContext.request.serverName, 'icemr')
+    }">
+  <div class="info announcebox ${homeClass}">
+    <table><tr><td>
+      <img src="/assets/images/clearInfoIcon.png" alt="Information" /></td>
+    <td>
+       <span class="warningMessage">
+       <h2>This <b><a href="http://youtu.be/hesbc8Vp-Y4">YouTube tutorial</a></b> 
+       provides instruction on how to use the antibody array data on this site.</h2>
+       </span>
+    </td></tr></table>
+  </div>
+</c:if>
+
 
 <!-- ================== IF SHOWBANNER, determined in pageFrame ============ -->
 
 <c:if test="${not empty showBanner}">
   <div class="info announcebox ${homeClass}" style="color:darkred;font-size:120%">
     <table><tr>
-			<td><img src="/assets/images/clearInfoIcon.png" alt="warningSign" /></td>
+			<td><img src="/assets/images/clearInfoIcon.png" alt="Information" /></td>
     	<td>
       	<span class="warningMessage">
 					${showBanner}
