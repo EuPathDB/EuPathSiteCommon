@@ -318,13 +318,16 @@ p.unreadlabel {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =News
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+table#news  { 
+  width: 100%;
+}
 table#news ul { 
-    	list-style: inside disc;
+  list-style: inside disc;
 	padding-left: 2em;
-    	text-indent: -1em;
+  text-indent: -1em;
 }
 table#news ul ul {
-    list-style-type: circle;
+  list-style-type: circle;
 }
 table#news p {
 	margin-top: 1em;
