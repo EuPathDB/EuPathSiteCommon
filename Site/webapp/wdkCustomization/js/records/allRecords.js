@@ -13,6 +13,7 @@
 
   $(document)
     .on('click', '.toggle-section:has(wdk-ajax)', loadWdkAjaxIfVisible)
+    // .on('click', '.toggle a, .toggle-handle a, .wdk-toggle-name a', loadWdkAjaxIfVisible)
     .ready(loadWdkAjaxIfVisible);
 
 }(jQuery));

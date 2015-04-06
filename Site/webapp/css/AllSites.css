@@ -218,7 +218,9 @@ table.threecolumn td {
 	padding-left: 19px;
 }
 
-
+#bubbles .sub_list {
+  display: none;
+}
 
 .detail_link {
 /*	border: 2px solid #d8d8d8; */
@@ -358,6 +360,9 @@ p.unreadlabel {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =News
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+table#news { 
+  width:100%;
+}
 table#news ul { 
     	list-style: inside disc;
 	padding-left: 2em;
@@ -900,6 +905,16 @@ th.mythStyle {
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 =genes Filters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+table#geneFilters th.phylum {
+  font-size: 110%;
+  font-weight: bold;
+}
+table#geneFilters th.genus {
+ font-size: 110%;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =TOXO  advanced filters (should be moved to Toxo.css)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -1195,6 +1210,13 @@ span.galaxy,b.galaxy{
 }
 span.galaxy {
 		border-width:2px 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      = Filter param
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.filter-param-tabs {
+  margin-left: -20em;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
