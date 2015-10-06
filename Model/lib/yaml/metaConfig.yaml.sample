@@ -19,6 +19,10 @@ required:
  commentDb.login: your_db_login
  commentDb.password: your_db_login
  gushome: $ENV{GUS_HOME}
+ 
+  # authentication method
+  authenticationMethod: user_db
+  oauthUrl: none
 
 
  ###############################################################################################
