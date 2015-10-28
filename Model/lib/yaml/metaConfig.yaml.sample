@@ -23,6 +23,8 @@ required:
 # authentication method
 authenticationMethod: user_db
 oauthUrl: https://integrate.eupathdb.org/oauth
+oauthClientId: apiComponentSite
+oauthClientSecret: 12345
 
 
  ###############################################################################################
