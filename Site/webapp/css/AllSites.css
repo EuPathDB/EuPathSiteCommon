@@ -89,13 +89,13 @@ article section {
 #contentcolumn {
 	min-width: 780px;
 	margin: 0 5px 0 220px;
-	background-color: #FFFFFF;
+	/*background-color: #FFFFFF; */
 	background-repeat: repeat-x;
 	text-align: left;
 }
 
 #contentcolumn2 {
-	background-color: #FFFFFF;
+	/*background-color: #FFFFFF; */
 	background-position: 0 -25px;
 	background-repeat: repeat-x;
 	margin: 0 5px 0 6px;
@@ -128,30 +128,53 @@ table.threecolumn {
 }
 
 table.threecolumn td {
-        vertical-align: top;
+  vertical-align: top;
 }
-
+/*
 .threecolumndiv {
 	width: 247px;
 }
-/* what for?
- * to prevent gap between img and div */
-.threecolumndivimg {
+*/
+
+.threecolumndiv div.heading {
 	display: block;
-}
-#bubbles .info {
-   width: 209px;
-   min-height: 319px;
-   height: 100%;
-   background-image: url(../images/bubble_backgrnd.png);
-   background-repeat: repeat-y;
-   text-align: left;
-   padding-top: 2px;
-   padding-right: 19px;
-   padding-bottom: 0px;
-   padding-left: 19px;
+  border-radius: 13px 13px 0 0;
+	height: 28px;
+  width: 227px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-right: 10px;
+	padding-left:  7px;
+  padding-top: 12px;
 }
 
+/* what for?
+ * to prevent gap between img and div */
+.threecolumndiv img#heading {
+  display: block;
+}	
+
+#bubbles .info {
+  width: 230px;
+  border: 1px solid grey;
+  border-top:0;
+  min-height: 340px; /* it varies depending on the number of categories shown */
+  height: 100%;
+  /*  background-image: url(../images/bubble_backgrnd.png);
+      background-repeat: repeat-y;
+  */
+  text-align: left;
+  padding-right: 5px;  /* 19px; */
+  padding-bottom: 20px;
+  padding-top: 6px;
+  padding-left: 5px;  /* 19px; */
+}
+#bubbles .info p.small {
+  margin: 0;
+  padding-bottom:1em;
+}
 #bubbles .info ul {
   height: 100%;
   padding: 0;
@@ -167,26 +190,25 @@ table.threecolumn td {
 #bubbles .info li ul {
   margin: 0 0 4px 0;
 }
-#bubbles .info li ul li
-{
-/*	list-style-image: url(../images/cir_bullet2.png);*/
+#bubbles .info li ul li {
 	border-bottom:1px solid lightgrey;
 	list-style-type: none;
 	margin-left: 22px;
-/*	font-size: 11px; */
 	line-height: 1.1em;
 }
-
+#bubbles .info li a.heading {
+  padding-left: 6px;
+}
 .bubble-header {
   margin-bottom: -4px;
 }
 
 #bubbles .infobottom {
-	width: 209px;
+/* 	width: 209px; */
 	min-height: 35px;    /* trying to keep buckest same size */
-	background-image: url(../images/bubble_bottom.png);
+/* 	background-image: url(../images/bubble_bottom.png);
 	background-position: bottom;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 	text-align: center;
 	padding-top: 2px;
 	padding-right: 19px;
@@ -203,12 +225,16 @@ table.threecolumn td {
 	display: inline;
 	left: -9999px;
 	position: absolute;
+	background-image: url(../wdk/images/question.png);
+	background-repeat: no-repeat;
 }
 
+/*
 .detail_link:link, .detail_link:visited{
-	color: blue;    /* #808080; */
-	text-decoration: underline;
+  color: blue;  
+  text-decoration: underline;; 
 }
+*/
 
 li:hover a.heading + a.detail_link, a.detail_link:hover {
 	left: -2px;
@@ -1276,6 +1302,139 @@ span.galaxy {
 .filter-param-tabs {
   margin-left: -20em;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      = From PlasmoDB.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+a:link, a:visited, div.divlink, .link {
+	color: #069;
+}
+
+a:hover, a:active, a:focus, div.divlink:hover, .link:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	color: #444;
+}
+
+h2 {
+  	color: #444;
+}
+
+.h2center, .h3left,.h3center, .h4left {
+  	color:  #444;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      = Boolean and Leaf transcript Filters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ 
+/* BOOLEAN, combined?  */
+
+  .gene-boolean-filter {
+    text-align: center;
+    display: none;
+    margin-bottom: 4px;
+  }
+  .gene-boolean-filter-controls {
+    display: none;
+  }
+  .gene-boolean-filter table {
+    border-collapse: separate;
+    color: black;
+  }
+  .gene-boolean-filter-summary {
+    display: inline-block;
+  }
+  .gene-boolean-filter-controls button:disabled {
+ 		color:grey;
+  }
+  .gene-boolean-filter-controls p {
+    text-align: center; 
+    margin: 1em 0 .4em;
+  }
+
+/* LEAF */
+
+ .gene-leaf-filter {
+    text-align: center;
+    display: none;
+    margin-bottom: 4px;
+  }
+  .gene-leaf-filter-controls {
+    display: none;
+  }
+  .gene-leaf-filter table {
+    border-collapse: separate;
+    color: black;
+  }
+  .gene-leaf-filter-summary {
+    display: inline-block;
+  }
+  .gene-leaf-filter-controls button:disabled {
+ 		color:grey;
+  }
+  .gene-leaf-filter-controls p {
+    text-align: center; 
+    margin: 1em 0 .4em;
+  }
+
+
+/* Any layout */
+
+ table#booleanFilter td#prompt{
+    font-weight:bold;
+  }
+  table#booleanFilter table img  {
+    width:80px;
+  }
+
+ table#leafFilter table img  {
+    width:20px; /* same size as in attribute column in site/wdkAttribute.tag */
+  }
+
+
+/* Horizontal layout */
+/*
+  table#booleanFilter table td {
+    padding-right:60px;
+  }
+  table#booleanFilter table td:last-child {
+    border-right:0;
+    padding-right:0;
+  }
+*/
+/* Vertical layout  bigger font, checkboxes and button */
+/*
+  div.gene-boolean-filter-controls button {
+    margin-top:10px;
+    transform:scale(1.2);
+  }
+  table#booleanFilter {
+    font-size:120%;
+  }
+  table#booleanFilter table input {
+    transform:scale(1.2);
+  }
+*/
+
+/* Vertical layout */
+
+  table#booleanFilter table td{
+    padding:0 8px;
+  }
+  table#booleanFilter table img  {
+    vertical-align: text-bottom;
+    margin-left:10px;
+  }
+  table#leafFilter table img  {
+    vertical-align: text-bottom;
+    margin-left:10px;
+  }
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       = THE END
