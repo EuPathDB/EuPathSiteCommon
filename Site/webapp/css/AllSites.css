@@ -810,7 +810,6 @@ span.smallTitle {
   clear: both;
   height: 2em;
   padding: 2em;
-  margin: 2em 0;
   background: #fafafa;
   border: 1px solid #f0f0f0;
 }
@@ -1175,6 +1174,11 @@ tr.headerrow th {
 	it does not work on IE7/8 (do not support css3) but it does not hurt either. */
 
 
+/* min width for Add Step question form */
+#query_form {
+  min-width: 825px;
+}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     = RESULT PAGE: motif
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -1338,129 +1342,7 @@ h2 {
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      = Results Table: Boolean and Leaf transcript Filters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
- 
-/* BOOLEAN, combined?  */
-
-  .gene-boolean-filter {
-    display: none;
-    margin-bottom: 4px;
-  }
-  .gene-boolean-filter-controls {
-    display: none;
-    text-align: center;
-    }
-  .gene-boolean-filter table {
-    border-collapse: separate;
-    color: black;
-  }
-  .gene-boolean-filter-summary {
-    display: inline-block;
-  }
-  .gene-boolean-filter-controls button:disabled {
- 		color:grey;
-  }
-  .gene-boolean-filter-controls p {
-    text-align: center; 
-    margin: 1em 0 .4em;
-  }
-
-/* LEAF */
-
- .gene-leaf-filter {
-    display: none;
-    margin-bottom: 4px; 
-  }
- .gene-leaf-filter p {
-    margin: 1em 0 .4em;
-}
-  .gene-leaf-filter-controls { 
-    display: none;
-    text-align: center;
-  }
-  .gene-leaf-filter table {
-    border-collapse: separate;
-    color: black;
-  }
-  .gene-leaf-filter-summary {
-    display: inline-block;
-  }
-  .gene-leaf-filter-controls button:disabled {
- 		color:grey;
-  }
-  .gene-leaf-filter-controls p {
-    text-align: center; 
-    margin: 1em 0 .4em; 
-  }
-
-
-/* Any layout */
-
- table#booleanFilter td#prompt{
-    font-weight:bold;
-  }
-  table#booleanFilter table img  {
-    width:80px;
-  }
-
- table#leafFilter table img  {
-    width:20px; /* same size as in attribute column in site/wdkAttribute.tag */
-  }
-
-
-/* Horizontal layout */
-/*
-  table#booleanFilter table td {
-    padding-right:60px;
-  }
-  table#booleanFilter table td:last-child {
-    border-right:0;
-    padding-right:0;
-  }
-*/
-/* Vertical layout  bigger font, checkboxes and button */
-/*
-  div.gene-boolean-filter-controls button {
-    margin-top:10px;
-    transform:scale(1.2);
-  }
-  table#booleanFilter {
-    font-size:120%;
-  }
-  table#booleanFilter table input {
-    transform:scale(1.2);
-  }
-*/
-
-/* Vertical layout */
-
-  table#booleanFilter table td{
-    padding:0 8px;
-  }
-  table#booleanFilter table img  {
-    vertical-align: text-bottom;
-    margin-left:10px;
-  }
-  table#leafFilter table img  {
-    vertical-align: text-bottom;
-    margin-left:10px;
-  }
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      = results table view filter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-  div#onlyOneTrPerGene {
-    padding: 2px 2px 6px;
-    font-family: Verdana;
-  }
-
-  div#onlyOneTrPerGene span {
-    color: darkred;
-  }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       = THE END
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
