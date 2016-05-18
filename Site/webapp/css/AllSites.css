@@ -78,6 +78,10 @@ article section {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =MAIN structure: contentwrapper css provided by wdk 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#contentwrapper {
+  background-color: white;
+}
+
 #search-bubbles {
 	min-width: 780px;
 	margin: 0 5px 0 220px;
@@ -234,7 +238,7 @@ table.threecolumn td {
 	display: inline;
 	left: -9999px;
 	position: absolute;
-	background-image: url(../wdk/images/question.png);
+	background-image: url(~wdk/images/question.png);
 	background-repeat: no-repeat;
 }
 .detail_link:hover {
