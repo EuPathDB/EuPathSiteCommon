@@ -80,6 +80,7 @@ article section {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #contentwrapper {
   background-color: white;
+  min-height: calc(100vh - 232px); /* keeps footer at bottom of screen */
 }
 
 #search-bubbles {
@@ -127,30 +128,39 @@ div.innertube #record-toolbox li {
 	 =HOME Page:  BUBBLE Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-table.threecolumn {
-	clear: both;
+.threecolumn {
+  /* flex container -- flex items are .threecolumndiv */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* align to top */
+  /* the following take effect when flex is not available */
+  text-align: center;
 }
 
-table.threecolumn td {
-  vertical-align: top;
-}
-/*
 .threecolumndiv {
-	width: 247px;
+  /* flex item -- flex container is .threecolumn */
+  border: 1px solid gray;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* need a fixed height since height of contents changes when expanded */
+  min-height: 490px;
+  width: 255px;
+  /* the following take effect when flex is not available */
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px;
 }
-*/
 
 .threecolumndiv div.heading {
-	display: block;
+  display: block;
   border-radius: 13px 13px 0 0;
-	height: 28px;
-  width: 227px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #FFFFFF;
-	text-decoration: none;
-	padding-right: 10px;
-	padding-left:  7px;
+  height: 28px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left:  7px;
   padding-top: 12px;
 }
 
@@ -161,19 +171,11 @@ table.threecolumn td {
 }	
 
 #bubbles .info {
-  width: 230px;
-  border: 1px solid grey;
-  border-top:0;
-  min-height: 315px; /* it varies depending on the number of categories shown */
-  height: 100%;
-  /*  background-image: url(../images/bubble_backgrnd.png);
-      background-repeat: repeat-y;
-  */
   text-align: left;
-  padding-right: 5px;  /* 19px; */
+  padding-right: 15px;  /* 19px; */
   padding-bottom: 20px;
   padding-top: 6px;
-  padding-left: 5px;  /* 19px; */
+  padding-left: 15px;  /* 19px; */
 }
 #bubbles .info p.small {
   margin: 0;
@@ -185,33 +187,52 @@ table.threecolumn td {
   margin: 0;
 }
 #bubbles .info li {
-	line-height: 1.5em;
-/*	list-style-image: url(../images/cir_bullet.png);*/
-	list-style-type: none;
-	margin-left: 7px;
-}
-
-#bubbles .info li i.fa{
-  color: #aaa; /* as in add columns */
-  cursor: pointer;
-  padding: 0 4px;
+  line-height: 1.5em;
+  /* list-style-image: url(../images/cir_bullet.png);*/
+  list-style-type: none;
+  margin-left: 7px;
 }
 
 #bubbles .info li ul {
   margin: 0 0 4px 0;
 }
 #bubbles .info li ul li {
-/* 	border-bottom:1px solid lightgrey; separation lines might not be needed */
-	list-style-position: outside;
-	list-style-type: disc;
-	color: #aaa;
-  margin-left: 28px;
-	line-height: 1.1em;
+  /* border-bottom:1px solid lightgrey; separation lines might not be needed */
+  list-style-type: disc;
+  color: #aaa;
+  margin-left: 20px;
+  line-height: 1.1em;
   padding:1px;
 }
+
 #bubbles .info li a.heading {
   /*padding-left: 6px; */
 }
+
+#bubbles .info .wdk-CheckboxTree-expandedItem,
+#bubbles .info .wdk-CheckboxTree-collapsedItem {
+  list-style: none;
+}
+
+#bubbles .wdk-CheckboxTree-list li label {
+  white-space: initial;
+}
+
+#bubbles .wdk-CheckboxTree-expandedItem:after {
+  display: none;
+}
+
+#bubbles .info .wdk-CheckboxTree > .wdk-CheckboxTree-list > li.wdk-CheckboxTree-leafItem {
+  list-style: disc inside;
+  margin-left: 2px;
+  color: #aaa;
+}
+
+#bubbles .info .wdk-CheckboxTree > .wdk-CheckboxTree-list > li.wdk-CheckboxTree-leafItem label {
+  position: relative;
+  left: -4px;
+}
+
 .bubble-header {
   margin-bottom: -4px;
 }
@@ -310,31 +331,30 @@ height: 240px;
 }
 
 .menu_lefttop_drop {
-   width: 194px;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 12px;
-   font-weight: normal;
-   padding: 6px;
-   line-height: 15px;
-   border: 1px solid grey;
-   background-color: #FFFFFF;
-   margin: -5px 0px 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 6px;
+  line-height: 15px;
+  border: 1px solid grey;
+  background-color: #FFFFFF;
+  margin: -5px 0px 5px;
 }
 
 
 
 #menu_lefttop a.heading {
-	height: 24px;
-/*	width: 191px;*/
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 17px;
-/*	voice-family: "\"}\""; */
-/*	voice-family: inherit; */
-	text-decoration: none;
-	background-repeat: no-repeat;
-	padding-right: 10px;
-	padding-left:  7px;
-	margin-bottom: 5px;
+  text-align: center;
+  height: 26px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left:  7px;
+  padding-top: 12px;
+  margin-bottom: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 #menu_lefttop div ul.related-sites,
@@ -366,12 +386,10 @@ iframe.twitter-timeline {
 /* newitems.js (highlight in yellow unread items) --  also adds warning sentence on side header, with how many items are unread*/
 p.unreadlabel {
   color:yellow;
-  font-size:12px;
+  font-size:10px;
   padding-left:7px;
   font-family: Verdana;
   margin: 0;
-  position: relative;
-  bottom: 4px;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -731,15 +749,14 @@ span.smallTitle {
 }
 
 .wide-footer {
-	min-width: 950px;
-	width: 95%;
+  /*
+  min-width: 950px;
+  width: 95%;
+  */
 }
 
 .skinny-footer {
-  min-width: 756px;
-  width:75%;
-  position:relative;
-  left:200px;
+  margin-left: 230px;
 }
 
 #footer .left, #footer .middle, #footer .right {
@@ -821,15 +838,23 @@ span.smallTitle {
 #fixed-footer .left {
   position: absolute;
   left: 10px;
+  bottom: 10px;
 }
 
 #fixed-footer .right {
   position: absolute;
   right: 10px;
+  bottom: 10px;
 }
 
 #fixed-footer .bottom {
   text-align: center;
+  position: relative;
+  bottom: 2px;
+}
+
+#fixed-footer .attributions {
+  text-align: right;
 }
 
 #fixed-footer .attributions,
@@ -841,6 +866,10 @@ span.smallTitle {
 
 #fixed-footer .site-icons img {
   height: 20px;
+}
+
+#fixed-footer .build-info {
+  padding: 1em 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
