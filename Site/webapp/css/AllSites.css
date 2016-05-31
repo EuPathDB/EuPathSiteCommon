@@ -134,7 +134,7 @@ div.innertube #record-toolbox li {
   justify-content: space-around;
   align-items: flex-start; /* align to top */
   /* the following take effect when flex is not available */
-  text-align: center;
+  /* text-align: center; */
 }
 
 .threecolumndiv {
@@ -162,38 +162,35 @@ div.innertube #record-toolbox li {
   padding-right: 10px;
   padding-left:  7px;
   padding-top: 12px;
+  text-align: center;
 }
 
-/* what for?
- * to prevent gap between img and div */
-.threecolumndiv img#heading {
-  display: block;
-}	
 
-#bubbles .info {
+#bubbles .info, #bubbles .tools {
   text-align: left;
   padding-right: 15px;  /* 19px; */
   padding-bottom: 20px;
   padding-top: 6px;
   padding-left: 15px;  /* 19px; */
 }
-#bubbles .info p.small {
-  margin: 0;
-  padding-bottom:1em;
-}
-#bubbles .info ul {
+
+#bubbles .info ul, #bubbles .tools ul  {
   height: 100%;
   padding: 0;
   margin: 0;
 }
-#bubbles .info li {
+#bubbles .tools ul {
+  margin-top: 1em;
+}
+
+#bubbles .info li, #bubbles .tools li {
   line-height: 1.5em;
   /* list-style-image: url(../images/cir_bullet.png);*/
   list-style-type: none;
   margin-left: 7px;
 }
 
-#bubbles .info li ul {
+#bubbles .info li ul, #bubbles .tools li ul  {
   margin: 0 0 4px 0;
 }
 #bubbles .info li ul li {
@@ -204,10 +201,12 @@ div.innertube #record-toolbox li {
   line-height: 1.1em;
   padding:1px;
 }
-
-#bubbles .info li a.heading {
-  /*padding-left: 6px; */
+#bubbles .tools li ul li {
+  line-height: 1.1em;
+  padding:1px;
 }
+
+
 
 #bubbles .info .wdk-CheckboxTree-expandedItem,
 #bubbles .info .wdk-CheckboxTree-collapsedItem {
@@ -237,6 +236,7 @@ div.innertube #record-toolbox li {
   margin-bottom: -4px;
 }
 
+/* Ortho only */
 #bubbles .infobottom {
 /* 	width: 209px; */
 	min-height: 35px;    /* trying to keep buckest same size */
@@ -250,40 +250,6 @@ div.innertube #record-toolbox li {
 	padding-left: 19px;
 }
 
-#bubbles .sub_list {
-  display: none;
-}
-
-.detail_link {
-/*	border: 2px solid #d8d8d8; */
-	display: inline;
-	left: -9999px;
-	position: absolute;
-	background-image: url(~wdk/images/question.png);
-	background-repeat: no-repeat;
-}
-.detail_link:hover {
-  text-decoration: none;
-}
-/*
-.detail_link:link, .detail_link:visited{
-  color: blue;  
-  text-decoration: underline;; 
-}
-*/
-
-li:hover a.heading + a.detail_link, a.detail_link:hover {
-	left: -2px;
-	position: relative;
-}
-
-
-/* for Internet Explorer */
-/*\*/
-* html #bubbles .info {
-height: 240px;
-}
-/**/
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =SIDEBAR
@@ -630,12 +596,14 @@ span.smallTitle {
   z-index: 99;
   min-width: 980px;
   width: 100%;
+/*
   box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.2);
   background: -webkit-linear-gradient(rgb(191,191,191), rgb(121,121,121));
   background: -o-linear-gradient(rgb(191,191,191), rgb(121,121,121));
   background: -moz-linear-gradient(rgb(191,191,191), rgb(121,121,121));
   background: linear-gradient(rgb(191,191,191), rgb(121,121,121));
-  background-color: rgb(171,171,171);
+*/
+  background-color: rgb(171,171,171); /* #ABABAB */
   margin-bottom: -0.4em;
 }
 
@@ -671,8 +639,13 @@ span.smallTitle {
 .sf-menu a:focus,
 .sf-menu a:hover,
 .sf-menu a:active {
-	background:		#C7C7C7;
+	background:		#C7C7C7; /* on hover, lighter */
 	outline:		0;
+}
+
+.sf-menu li.sfHover a.back-to-top:link, .sf-menu li.sfHover a.back-to-top:visited, .sf-menu li.sfHover a.back-to-top:hover {
+  background-color: #ABABAB;
+  color: white;
 }
 
 /*
@@ -686,7 +659,7 @@ span.smallTitle {
   padding: 0.3em;
   border-left: none;
 }
-
+/*
 .sf-menu a:hover {
   color: #7a3838;
 }
@@ -694,7 +667,7 @@ span.smallTitle {
 .sf-menu .sfHover > a {
   color: #364179;
 }
-
+*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 =Search Boxes (ORTHO: commmon.css)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -1375,6 +1348,16 @@ h2 {
 }
 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Search and Download pages: larger submit button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.filter-button input[type="submit"], 
+.eupathdb-ReporterFormSubmit input[type="submit"] {
+  font-size: 135%;
+  border: 2px solid grey; 
+  border-radius: 6px;
+  background-color: white;
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       = THE END
