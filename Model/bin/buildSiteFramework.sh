@@ -48,8 +48,8 @@ contextFile=$eupath_home/site/etc/$modelLower.xml
 echo "<Context" > $contextFile
 echo "  docBase=\"$eupath_home/site/webapp\"" >> $contextFile
 echo "  privileged=\"false\"" >> $contextFile
-echo "  swallowOutput=\"true\"" >> $contextFile
-echo "  allowLinking=\"true\">" >> $contextFile
+echo "  swallowOutput=\"true\">" >> $contextFile
+echo "  <Resources allowLinking=\"true\" />" >> $contextFile
 echo "  <Parameter name=\"model\" value=\"$model\"/>" >> $contextFile
 echo "</Context>" >> $contextFile
 
