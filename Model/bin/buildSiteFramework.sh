@@ -29,6 +29,8 @@ echo "#!/bin/bash" > $envFile
 echo "export GUS_HOME=$eupath_home/gus_home" >> $envFile
 echo "export PROJECT_HOME=$eupath_home/project_home" >> $envFile
 echo "export PATH=\$GUS_HOME/bin:\$PROJECT_HOME/install/bin:\$PATH" >> $envFile
+# don't want to add this config to CATALINA_OPTS more than once
+echo "[[ ! $CATALINA_OPTS =~ \"-Dorg.apache.el.parser.SKIP_IDENTIFIER_CHECK=true\" ]] && export CATALINA_OPTS=\"\$CATALINA_OPTS -Dorg.apache.el.parser.SKIP_IDENTIFIER_CHECK=true\"" >> $envFile
 source $envFile
 
 # make gus_home required dirs
