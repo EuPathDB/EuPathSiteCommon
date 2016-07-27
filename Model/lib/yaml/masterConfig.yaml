@@ -183,6 +183,9 @@ hostdb: {}
 
 microsporidiadb: {}
 
+microbiomedb:
+  modelName: microbiomeModel
+
 orthomcl:
   modelName: OrthoMCL
   webServiceMirrorOrtho: /var/www/Common/apiSiteFilesMirror/webServices/OrthoMCL
