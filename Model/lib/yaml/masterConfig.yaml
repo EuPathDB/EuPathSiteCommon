@@ -112,7 +112,7 @@ default:
   # needed only in portal to access comp sites
   amebURL: none
   crypURL: none
-  fungRUL: none
+  fungURL: none
   giarURL: none
   mbioURL: none
   micrURL: none
