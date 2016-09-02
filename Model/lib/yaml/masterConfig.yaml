@@ -111,16 +111,16 @@ default:
 
   # needed only in portal to access comp sites
   amebURL: none
-  crypURL: none 
-  giarURL: none 
-  micrURL: none 
-  piroURL: none 
-  plasURL: none 
-  toxoURL: none 
-  tricURL: none 
+  crypURL: none
+  fungRUL: none
+  giarURL: none
+  mbioURL: none
+  micrURL: none
+  piroURL: none
+  plasURL: none
+  toxoURL: none
+  tricURL: none
   trypURL: none
-
-  fungURL: none
 
  
 #=======================================================================================================
