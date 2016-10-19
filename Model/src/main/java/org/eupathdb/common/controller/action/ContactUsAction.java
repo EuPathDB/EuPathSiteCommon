@@ -159,7 +159,9 @@ public class ContactUsAction extends WdkAction {
 	  String redmineMetaInfo = "Project: usersupportrequests\n" +
 	      "Category: " + website + "\n" +
 	      "\n" + metaInfo + "\n" +
-	      "Client IP Address: " + reqData.getIpAddress() + "\n";
+	      "Client IP Address: " + reqData.getIpAddress() + "\n" +
+        "WDK Host: " + reqData.getAppHostName() + 
+        " (" + reqData.getAppHostAddress() + ")\n";
 	  
 	  try {
 	    // send auto-reply
