@@ -129,11 +129,6 @@ default:
   tricURL: none
   trypURL: none
 
-  # web.xml specific config properties
-  applicationListenerClass: org.gusdb.wdk.controller.ApplicationInitListener
-  restServiceApplicationClass: org.gusdb.wdk.service.WdkServiceApplication
-
-
 #=======================================================================================================
 
 production:
@@ -161,9 +156,6 @@ apiSite:
 
   profile.perlExec: /usr/bin/perl
   profile.connection: dbi:Oracle:${appDb.instance}
-
-  applicationListenerClass: org.apidb.apicommon.controller.ApplicationInitListener
-  restServiceApplicationClass: org.apidb.apicommon.service.ApiWebServiceApplication
 
 amoebadb: {}
 

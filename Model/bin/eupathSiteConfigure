@@ -22,9 +22,6 @@ if ($project eq "OrthoMCL" || $project eq "MicrobiomeDB") {
         "$ENV{PROJECT_HOME}/EuPathSiteCommon/Model/config/model.prop.tmpl\t".
         "$ENV{GUS_HOME}/config/\${project}/model.prop\n".
 
-        "$ENV{PROJECT_HOME}/EuPathSiteCommon/Site/config/web.xml.tmpl\t".
-        "$ENV{WEBAPP}/WEB-INF/web.xml\n".
-
         "$ENV{PROJECT_HOME}/EuPathWebSvcCommon/WSFPlugin/config/blast-config.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/blast-config.xml\n".
 
@@ -37,9 +34,6 @@ if ($project eq "OrthoMCL" || $project eq "MicrobiomeDB") {
 
         "$ENV{PROJECT_HOME}/EuPathSiteCommon/Model/config/model.prop.tmpl\t".
         "$ENV{GUS_HOME}/config/\${project}/model.prop\n".
-
-        "$ENV{PROJECT_HOME}/EuPathSiteCommon/Site/config/web.xml.tmpl\t".
-        "$ENV{WEBAPP}/WEB-INF/web.xml\n".
 
         "$ENV{PROJECT_HOME}/ApiCommonWebService/WSFPlugin/config/profileSimilarity-config.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/profileSimilarity-config.xml\n".
