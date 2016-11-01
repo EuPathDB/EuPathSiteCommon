@@ -21,7 +21,7 @@
     <imp:stylesheet href="images/${model.projectId}/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
     <script>
       // used by apidb to initialize wdk
-      window.__WDK_CONFIG__ = {
+      window.__EUPATHDB_CONFIG__ = {
         rootElement: "#wdk-container",
         rootUrl: "${webAppUrl}${pageContext.request.servletPath}",
         endpoint: "${webAppUrl}/service",
