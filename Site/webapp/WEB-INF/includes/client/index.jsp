@@ -20,24 +20,18 @@
     <meta charset="UTF-8">
     <imp:stylesheet href="images/${model.projectId}/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
     <script>
-      // used by apidb to initialize wdk
-      window.__EUPATHDB_CONFIG__ = {
-        rootElement: "#wdk-container",
-        rootUrl: "${webAppUrl}${pageContext.request.servletPath}",
-        endpoint: "${webAppUrl}/service",
-        projectId: "${model.projectId}",
-        buildNumber: "${model.buildNumber}",
-        releaseDate: "${model.releaseDate}",
-        webAppUrl: "${webAppUrl}",
-        facebookId: "${props.FACEBOOK_ID}",
-        twitterId: "${props.TWITTER_ID}",
-        youtubeId: "${props.YOUTUBE_ID}"
-      };
-      window.__EUPATHDB_ANNOUNCEMENTS__ = {
-        information: ${information},
-        degraded: ${degraded},
-        down: ${down}
-      };
+      (function(cfg) {
+        // used by apidb to initialize wdk
+        cfg.rootElement = "#wdk-container";
+        cfg.webAppUrl = "${webAppUrl}";
+        cfg.rootUrl = "${webAppUrl}${pageContext.request.servletPath}";
+        cfg.endpoint = "${webAppUrl}/service";
+        cfg.buildNumber = "${model.buildNumber}";
+        cfg.releaseDate = "${model.releaseDate}";
+        cfg.announcements = { information: ${information}, degraded: ${degraded}, down: ${down} };
+      }(window.__EUPATHDB_CONFIG__ = {}));
+
+      <jsp:include page="WEB-INF/wdk-model/config/site.config.js"/>
 
       <%-- Initialize google analytics. A pageview event will be sent in the JavaScript code. --%>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

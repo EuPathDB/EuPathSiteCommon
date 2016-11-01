@@ -25,6 +25,9 @@ if ($project eq "OrthoMCL" || $project eq "MicrobiomeDB") {
         "$ENV{PROJECT_HOME}/EuPathWebSvcCommon/WSFPlugin/config/blast-config.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/blast-config.xml\n".
 
+        "$ENV{PROJECT_HOME}/EuPathSiteCommon/Site/config/site.config.js.tmpl\t".
+        "$ENV{GUS_HOME}/config/site.config.js\n".
+
         "$ENV{PROJECT_HOME}/EuPathSiteCommon/Model/config/projects.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/projects.xml";
 } else {
@@ -43,6 +46,9 @@ if ($project eq "OrthoMCL" || $project eq "MicrobiomeDB") {
 
         "$ENV{PROJECT_HOME}/EuPathWebSvcCommon/WSFPlugin/config/blast-config.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/blast-config.xml\n".
+
+        "$ENV{PROJECT_HOME}/EuPathSiteCommon/Site/config/site.config.js.tmpl\t".
+        "$ENV{GUS_HOME}/config/site.config.js\n".
 
         "$ENV{PROJECT_HOME}/ApiCommonWebService/WSFPlugin/config/highSpeedSnpSearch-config.xml.tmpl\t".
         "$ENV{GUS_HOME}/config/highSpeedSnpSearch-config.xml\n".
