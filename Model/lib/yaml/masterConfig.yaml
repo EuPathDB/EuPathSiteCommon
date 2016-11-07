@@ -129,6 +129,11 @@ default:
   tricURL: none
   trypURL: none
 
+  quicksearch.enabled: false
+  # comma separated list of displayName, questionName, searchBoxParamName
+  quicksearch.left: ''
+  quicksearch.right: ''
+
 #=======================================================================================================
 
 production:
@@ -156,6 +161,10 @@ apiSite:
 
   profile.perlExec: /usr/bin/perl
   profile.connection: dbi:Oracle:${appDb.instance}
+
+  quicksearch.enabled: true
+  quicksearch.left: Gene ID, GeneBySingleLocusTag, single_gene_id
+  quicksearch.right: Gene Text Search, GenesByTextSearch, text_expression
 
 amoebadb: {}
 
