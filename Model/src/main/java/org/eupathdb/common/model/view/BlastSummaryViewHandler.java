@@ -24,6 +24,9 @@ public class BlastSummaryViewHandler implements SummaryViewHandler {
       User user, WdkModel wdkModel) throws WdkModelException, WdkUserException {
     Map<String, Object> attributes = new HashMap<>();
 
+		// force a blast result to show all IDs (full page)
+    step.setAnswerValuePaging(1, -1);
+
     // split template into 3 sections, header, middle, footer
     String message = step.getAnswerValue().getResultMessage();
     String[] pieces = message.split(MACRO_SUMMARY, 2);
