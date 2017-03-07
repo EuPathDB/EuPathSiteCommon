@@ -6,6 +6,8 @@ use strict;
 my $firstLog = 1;
 my @allowedPhases = ('init', 'main', 'clean');
 
+# WORKS ONLY WITH ONE PROJECT
+# 
 # FOR NOW... the pipelines used by eupathUserDbMigration are HARD CODED in this file!
 
 # To edit a pipeline, see all comments labeled with EDIT_PIPELINE
@@ -179,7 +181,6 @@ $pipelines{release} =
     ['fixBaskets', "wdkFixBasket -model '$args{project}'", !$REPLIC_STEP, ['projects'] ],
     ['validateReplBasket', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
     @{$subPipeline{updateAndReportOnStepsInternal}},
-
     ['removeBroken', "wdkRemoveBroken -model $args{project}", !$REPLIC_STEP, ['project']], # remove broken strategies
     ['validateReplBroken', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
     ['validateSteps', "wdkValidateStep -model $args{project}", !$REPLIC_STEP , ['projects']],
