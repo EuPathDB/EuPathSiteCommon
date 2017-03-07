@@ -96,7 +96,7 @@ die "Can't find 'project:' or 'appDb.instance:' lines in provided meta file\n" u
 # print "Masters: $masterProject, $masterProjectLower\n";
 foreach my $component (@components) {
   my $prefix = $component->[0];
-  next if $prefix eq $masterPrefix;
+#  next if $prefix eq $masterPrefix;
   my $project = $component->[1];
   my $projectLower = lc($project);
   my $file = "${project}MetaConfig.yaml";
