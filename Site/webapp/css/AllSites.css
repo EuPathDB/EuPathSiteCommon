@@ -682,7 +682,7 @@ div#quick-search td {
    float: right;
    text-align: right;
    margin-right: 12px;
-   margin-top: 38px;
+   margin-top: 26px;
 }
 
 #header_rt a:link, #header_rt a:visited {
@@ -703,6 +703,7 @@ div#quick-search td {
 #toplink {
   padding-top: 1px;
   position: absolute;
+  top: 0;
   right: 25px;
 }
 
