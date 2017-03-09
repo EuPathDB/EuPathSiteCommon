@@ -94,7 +94,6 @@ $subPipeline{configureProject} =
     ['buildConfigFile', "eupathMultiSiteConfigure '$args{project}' $args{metaFileNameTemplate}", !$REPLIC_STEP, ['project', 'metaFileNameTemplate'] ],
   ];
 
-
 $subPipeline{cacheModelInit} =
   [
    @{$subPipeline{configureProject}},
@@ -112,13 +111,13 @@ $subPipeline{cacheModel} =
 $subPipeline{updateAndReportOnStepsInternal} =
   [
    ['mapOrganism', "eupathMapOrganism $args{project} $args{organismsMappingFile}" , !$REPLIC_STEP, ['organismsMappingFile', 'project']],
-   ['validateReplOrganism', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+   ['validateReplOrganism', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
 
    ['mapQuestionName', "eupathMapQuestion $args{project} $args{questionsMappingFile}" , !$REPLIC_STEP, ['questionsMappingFile', 'project']],
-   ['validateReplQuestion', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+   ['validateReplQuestion', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
 
    ['expandStep', "wdkExpandStep -model $args{project}", !$REPLIC_STEP, ['project']],
-   ['validateReplExpand', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+   ['validateReplExpand', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
 
    ['invalidStepReport',"wdkInvalidStepReport -model $args{project}", !$REPLIC_STEP, ['project']],
   ];
@@ -178,13 +177,14 @@ $pipelines{release} =
   {
    main =>
    [
+    @{$subPipeline{configureProject}},  #make sure we have the right gus_home/config/*/model_config.xml
     ['fixBaskets', "wdkFixBasket -model '$args{project}'", !$REPLIC_STEP, ['project'] ],
-    ['validateReplBasket', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+    ['validateReplBasket', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
     @{$subPipeline{updateAndReportOnStepsInternal}},
     ['removeBroken', "wdkRemoveBroken -model $args{project}", !$REPLIC_STEP, ['project']], # remove broken strategies
-    ['validateReplBroken', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+    ['validateReplBroken', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
     ['validateSteps', "wdkValidateStep -model $args{project}", !$REPLIC_STEP , ['project']],
-    ['validateReplValSteps', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+    ['validateReplValSteps', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
    ],
 
    clean =>
@@ -201,7 +201,7 @@ $pipelines{cleanup} =
    @{$subPipeline{configureProject}},
     ['removeGuests', "wdkRemoveGuests -model $args{project} -cutoffDate $args{removeGuestsCutoff}", !$REPLIC_STEP, ['project', 'removeGuestsCutoff']],
     ['guestUserReport', "eupathGuestUserReport --primaryModel $args{project}", !$REPLIC_STEP, ['project']],
-    ['validateReplGuests', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 20 -sleep 10", $REPLIC_STEP, ['project']],
+    ['validateReplGuests', "eupathValidateReplication -primaryModel $args{project} -rowTolerance 100 -sleep 10", $REPLIC_STEP, ['project']],
    ]
   };
 
