@@ -659,6 +659,11 @@ ul.cirbulletlist {
   padding: 6px 6px 6px 18px;
 }
 
+#quick-search {
+  margin-bottom: 12px;
+  margin-top: 16px;
+  height: 26px;
+}
 
 div#quick-search td {
   white-space: nowrap;
