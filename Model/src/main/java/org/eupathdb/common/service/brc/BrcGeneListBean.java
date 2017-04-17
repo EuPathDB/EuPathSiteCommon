@@ -12,8 +12,6 @@ public class BrcGeneListBean {
   private String provenance;
   private String significance;
   private String significanceType;
-  private String hitCount;
-  private String percentCount;
 
   public static BrcGeneListBean parseRecordGeneListJson(JSONObject recordJson, boolean answer) throws WdkModelException {
 	BrcGeneListBean brcGeneListBean = new BrcGeneListBean();
@@ -25,12 +23,10 @@ public class BrcGeneListBean {
 	brcGeneListBean.setUri("NA");
 	brcGeneListBean.setType("NA");
 	brcGeneListBean.setProvenance("NA");
-	brcGeneListBean.setSignificance("NA");
-	brcGeneListBean.setSignificanceType("NA");
 	JSONObject attributesJson = recordJson.getJSONObject("attributes");
 	if(answer) {
-	  brcGeneListBean.setHitCount(String.valueOf(attributesJson.get("hit_count")));
-	  brcGeneListBean.setPercentCount(String.valueOf(attributesJson.get("percent_count")));
+	  brcGeneListBean.setSignificanceType("Percent matched");
+	  brcGeneListBean.setSignificance(String.valueOf(attributesJson.get("percent_count")));
 	}  
 	return brcGeneListBean;
   }
@@ -98,23 +94,5 @@ public class BrcGeneListBean {
   public void setDescription(String description) {
 	this.description = description;
   }
-
-  public String getHitCount() {
-	return hitCount;
-  }
-
-  public void setHitCount(String hitCount) {
-	this.hitCount = hitCount;
-  }
-
-  public String getPercentCount() {
-	return percentCount;
-  }
-
-  public void setPercentCount(String percentCount) {
-	this.percentCount = percentCount;
-  }
-  
-  
 
 }

@@ -44,7 +44,7 @@ public class BrcRequest {
       .put("ids", ids);
   }
   
-  public JSONObject getWdkAnswerJson() {
+  public JSONObject getAnswerJson() {
     return new JSONObject()
       .put("answerSpec", getAnswerSpecJson())
       .put("formatting", getFormatting());

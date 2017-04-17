@@ -12,30 +12,25 @@ public class BrcFormatter {
   public static JSONArray getJson(Set<BrcBean> beans) throws JSONException, WdkModelException {
 	JSONArray array = new JSONArray();
 	for(BrcBean bean : beans) {
-      BrcGeneListBean idLists = bean.getIdLists();
-      JSONArray idListsJson = new JSONArray();
-      JSONObject idListJson = getGeneListJson(idLists, true);
-      idListsJson.put(idListJson);
-	  array.put(getBrcJson(bean)
-			  .put("idLists", idListsJson));
+	  array.put(getBrcJson(bean, true));
 	}
 	return array;
   }
-  
-  public static JSONObject getJson(BrcBean bean) throws JSONException, WdkModelException {
-    return getBrcJson(bean)
-   	 .put("tables", bean.getDatasetRecordTablesJson());
-  }
 
-  public static JSONObject getBrcJson(BrcBean bean) throws JSONException, WdkModelException {
+  public static JSONObject getBrcJson(BrcBean bean, boolean search) throws JSONException, WdkModelException {
+	BrcGeneListBean idLists = bean.getIdLists();
+    JSONArray idListsJson = new JSONArray();
+    JSONObject idListJson = getGeneListJson(idLists, search);
+    idListsJson.put(idListJson);
     return new JSONObject()
-      .put("experimentalIdentifier", bean.getExperimentalIdentifier())
+      .put("experimentIdentifier", bean.getExperimentIdentifier())
       .put("displayName", bean.getDisplayName())
       .put("type", bean.getType())
       .put("description", bean.getDescription())
       .put("uri", bean.getUri())
       .put("species", bean.getSpecies())
-      .put("genomeVersion", bean.getGenomeVersion());
+      .put("genomeVersion", bean.getGenomeVersion())
+      .put("idLists", idListsJson);
   }
   
   public static JSONObject getGeneListJson(BrcGeneListBean bean, boolean search) {
@@ -45,13 +40,11 @@ public class BrcFormatter {
       .put("description", bean.getDescription())
       .put("uri", bean.getUri())
       .put("type", bean.getType())
-      .put("provenance", bean.getProvenance())
-      .put("significance", bean.getSignificance())
-      .put("significanceType", bean.getSignificanceType());    
+      .put("provenance", bean.getProvenance()); 
     if(search) {
       json
-        .put("hitCount", bean.getHitCount())
-        .put("percentCount", bean.getPercentCount());
+        .put("significance", bean.getSignificance())
+        .put("significanceType", bean.getSignificanceType());
     }
     return json;
   }

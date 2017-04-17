@@ -10,15 +10,19 @@ public class ApiFormatter {
 	  .put("inputTypes", new JSONArray()
 	    .put(new JSONObject()
 		  .put("type", "gene")
-		  .put("displayName", "String")
-		  .put("description", "String")
+		  .put("displayName", "Gene Set")
+		  .put("description", "A list of genes to match against experiments")
 		  .put("idSources", new JSONArray()
             .put("genebank"))
 		  .put("thresholdTypes", new JSONArray()
-            .put("specificity"))
+            .put(new JSONObject()
+              .put("name", "Percent matched")
+              .put("display_name", "Percent matched")
+              .put("min", 0)
+              .put("max", 100)))
 		  .put("additionalFlags", new JSONArray()
 		    .put(new JSONObject()
 			  .put("key","useOrthology")
-			  .put("jsonType", "Boolean")))));
+			  .put("jsonType", "boolean")))));
   }
 }

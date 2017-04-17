@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class BrcBean {
-  private String experimentalIdentifier;
+  private String experimentIdentifier;
   private String displayName;
   private String type;
   private String description;
@@ -16,23 +16,21 @@ public class BrcBean {
   private String species;
   private String genomeVersion;
   private BrcGeneListBean idLists;
-  private JSONObject datasetRecordTablesJson;
   
   public static Set<BrcBean> parseAnswerJson(JSONObject answerJson) throws WdkModelException {
 	Set<BrcBean> brcBeans = new HashSet<>();  
 	JSONArray recordsJson = answerJson.getJSONArray("records");
 	for(int i = 0; i < recordsJson.length(); i++) {
 	  JSONObject recordJson = recordsJson.getJSONObject(i);
-	  BrcBean brcBean = parseRecordJson(recordJson);
-	  brcBean.setIdLists(BrcGeneListBean.parseRecordGeneListJson(recordJson, true));
+	  BrcBean brcBean = parseRecordJson(recordJson, true);
 	  brcBeans.add(brcBean);
 	}
 	return brcBeans;
   }
   
-  protected static BrcBean parseRecordJson(JSONObject recordJson) {
+  protected static BrcBean parseRecordJson(JSONObject recordJson, boolean search) throws WdkModelException {
     BrcBean brcBean = new BrcBean();
-    brcBean.setExperimentalIdentifier(
+    brcBean.setExperimentIdentifier(
       String.valueOf(((JSONObject)recordJson.getJSONArray("id").get(0)).get("value"))
     );
     JSONObject attributesJson = recordJson.getJSONObject("attributes");
@@ -42,26 +40,16 @@ public class BrcBean {
     brcBean.setUri("NA");
     brcBean.setSpecies(attributesJson.getString("organism_prefix"));
     brcBean.setGenomeVersion("NA");
+    brcBean.setIdLists(BrcGeneListBean.parseRecordGeneListJson(recordJson, search));
     return brcBean;
   }
   
-  public static BrcBean parseDatasetRecordJson(JSONObject datasetRecordJson, boolean showGeneList) throws WdkModelException {
-	BrcBean brcBean = parseRecordJson(datasetRecordJson);
-	if(showGeneList) {
-	  brcBean.setIdLists(BrcGeneListBean.parseRecordGeneListJson(datasetRecordJson, false));
-	}
-	else {
-	  brcBean.setDatasetRecordTablesJson(datasetRecordJson.getJSONObject("tables"));
-	}  
-	return brcBean;
-  }
-   
-  public String getExperimentalIdentifier() {
-	return experimentalIdentifier;
+  public String getExperimentIdentifier() {
+	return experimentIdentifier;
   }
   
-  public void setExperimentalIdentifier(String experimentalIdentifier) {
-	this.experimentalIdentifier = experimentalIdentifier;
+  public void setExperimentIdentifier(String experimentIdentifier) {
+	this.experimentIdentifier = experimentIdentifier;
   }
   
   public String getDisplayName() {
@@ -119,15 +107,5 @@ public class BrcBean {
   public void setIdLists(BrcGeneListBean idLists) {
 	this.idLists = idLists;
   }
-
-  public JSONObject getDatasetRecordTablesJson() {
-	return datasetRecordTablesJson;
-  }
-
-  public void setDatasetRecordTablesJson(JSONObject datasetRecordTablesJson) {
-	this.datasetRecordTablesJson = datasetRecordTablesJson;
-  }
-  
-  
 
 }
