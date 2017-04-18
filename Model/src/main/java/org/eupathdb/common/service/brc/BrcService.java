@@ -44,6 +44,7 @@ public class BrcService extends WdkService {
    */
   protected String getAppName() {
     String path = getUriInfo().getRequestUri().getRawPath();
+    LOG.info("APP NAME: " + path.substring(1, path.indexOf("/service")));
 	return path.substring(1, path.indexOf("/service"));
   }
   
