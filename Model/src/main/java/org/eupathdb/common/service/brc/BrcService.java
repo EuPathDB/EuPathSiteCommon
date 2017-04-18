@@ -42,7 +42,7 @@ public class BrcService extends WdkService {
    * @return
    */
   @POST
-  @Path("/experiment/search/gene-list")
+  @Path("search/experiment/gene-list")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response getBrc(String body) {
@@ -116,7 +116,7 @@ public class BrcService extends WdkService {
    * @return
    */
   @GET
-  @Path("/experiment/search/gene-list/api")
+  @Path("search/experiment/gene-list/api")
   @Produces(MediaType.APPLICATION_JSON)
   public Response getApi() {
     return Response.ok(ApiFormatter.getJson().toString()).build();
