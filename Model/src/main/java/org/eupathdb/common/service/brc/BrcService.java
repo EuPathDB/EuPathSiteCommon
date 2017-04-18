@@ -3,6 +3,7 @@ package org.eupathdb.common.service.brc;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,6 +20,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import org.apache.log4j.Logger;
 import org.gusdb.fgputil.IoUtil;
@@ -37,6 +39,15 @@ public class BrcService extends WdkService {
   private final String ID_LIST_ID_PATH_PARAM = "idListId";
   
   /**
+   * Utility method to determine the app name from the request uri so we can make internal REST calls
+   * @return - app name
+   */
+  protected String getAppName() {
+    String path = getUriInfo().getRequestUri().getRawPath();
+	return path.substring(1, path.indexOf("/service"));
+  }
+  
+  /**
    * REST service version of the DatasetQuestions.DatasetsByGeneList question
    * @param body
    * @return
@@ -47,6 +58,7 @@ public class BrcService extends WdkService {
   @Produces(MediaType.APPLICATION_JSON)
   public Response getBrc(String body) {
     JSONObject requestJson = new JSONObject(body);
+
     try {
       BrcRequest brcRequest = BrcRequest.createFromJson(requestJson);
       String userId = callUserService();
@@ -133,7 +145,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/plasmodb/service/answer")
+      .target("http://localhost/" + getAppName() + "/service/answer")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -170,7 +182,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
 	Response response = client
-      .target("http://localhost/plasmodb/service/user/current")
+      .target("http://localhost/" + getAppName() + "/service/user/current")
       .request(MediaType.APPLICATION_JSON)
       .get();
     try {
@@ -209,7 +221,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/plasmodb/service/user/" + userId + "/dataset")
+      .target("http://localhost/" + getAppName() + "/service/user/" + userId + "/dataset")
 	  .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -247,7 +259,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/plasmodb/service/record/DatasetRecordClasses.DatasetRecordClass/instance")
+      .target("http://localhost/" + getAppName() + "/service/record/DatasetRecordClasses.DatasetRecordClass/instance")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
 	  .post(Entity.entity(datasetRecordJson.toString(), MediaType.APPLICATION_JSON));
