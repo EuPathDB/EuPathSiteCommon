@@ -159,7 +159,7 @@ public class BrcService extends WdkService {
         return new JSONObject(new String(buffer.toByteArray()));
       }
       else {
-        throw new WdkModelException("Bad status - " + response.getStatus());
+        throw new WdkModelException("Bad status for app " + getAppName() + " - " + response.getStatus());
       }
     }
     catch(IOException ioe) {
