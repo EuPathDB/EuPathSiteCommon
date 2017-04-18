@@ -42,7 +42,7 @@ public class BrcService extends WdkService {
    * @return
    */
   @POST
-  @Path("search/experiment/gene-list")
+  @Path("/search/experiment/gene-list")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response getBrc(String body) {
@@ -116,7 +116,7 @@ public class BrcService extends WdkService {
    * @return
    */
   @GET
-  @Path("search/experiment/gene-list/api")
+  @Path("/search/experiment/gene-list/api")
   @Produces(MediaType.APPLICATION_JSON)
   public Response getApi() {
     return Response.ok(ApiFormatter.getJson().toString()).build();
@@ -133,7 +133,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost:8080/plasmodb/service/answer")
+      .target("http://localhost/plasmodb/service/answer")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -170,7 +170,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
 	Response response = client
-      .target("http://localhost:8080/plasmodb/service/user/current")
+      .target("http://localhost/plasmodb/service/user/current")
       .request(MediaType.APPLICATION_JSON)
       .get();
     try {
@@ -209,7 +209,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost:8080/plasmodb/service/user/" + userId + "/dataset")
+      .target("http://localhost/plasmodb/service/user/" + userId + "/dataset")
 	  .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -247,7 +247,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost:8080/plasmodb/service/record/DatasetRecordClasses.DatasetRecordClass/instance")
+      .target("http://localhost/plasmodb/service/record/DatasetRecordClasses.DatasetRecordClass/instance")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
 	  .post(Entity.entity(datasetRecordJson.toString(), MediaType.APPLICATION_JSON));
