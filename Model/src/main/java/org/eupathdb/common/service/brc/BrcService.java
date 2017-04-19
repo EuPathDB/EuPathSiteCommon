@@ -3,7 +3,6 @@ package org.eupathdb.common.service.brc;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.util.Map;
 import java.util.Set;
 
@@ -20,7 +19,6 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 
 import org.apache.log4j.Logger;
 import org.gusdb.fgputil.IoUtil;
@@ -29,6 +27,11 @@ import org.gusdb.wdk.service.request.exception.RequestMisformatException;
 import org.gusdb.wdk.service.service.WdkService;
 import org.json.JSONObject;
 
+/**
+ * Provides service in conformance with the BRC Use Case 4 specification as of Apr 2017.
+ * @author crisl-adm
+ *
+ */
 @Path("/hpi")
 public class BrcService extends WdkService {
 	
@@ -39,9 +42,9 @@ public class BrcService extends WdkService {
   private final String ID_LIST_ID_PATH_PARAM = "idListId";
   
   /**
-   * Utility method to determine the host/app from the request uri so we can make internal REST calls.
-   * The scheme is assumed to be http.
-   * @return - uri string up to app name
+   * Utility method to return the initial portion of the request uri so we can make internal REST calls
+   * using that same base uri.  The scheme is assumed to be http.
+   * @return - uri string up to app name and service path
    */
   protected String getBaseUri() {
     return getUriInfo().getBaseUri().toString();
