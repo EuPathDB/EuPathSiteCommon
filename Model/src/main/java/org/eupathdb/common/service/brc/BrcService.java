@@ -39,13 +39,12 @@ public class BrcService extends WdkService {
   private final String ID_LIST_ID_PATH_PARAM = "idListId";
   
   /**
-   * Utility method to determine the app name from the request uri so we can make internal REST calls
-   * @return - app name
+   * Utility method to determine the host/app from the request uri so we can make internal REST calls.
+   * The scheme is assumed to be http.
+   * @return - uri string up to app name
    */
-  protected String getAppName() {
-    String path = getUriInfo().getRequestUri().getRawPath();
-    LOG.info("APP NAME: " + path.substring(1, path.indexOf("/service")));
-	return path.substring(1, path.indexOf("/service"));
+  protected String getBaseUri() {
+    return getUriInfo().getBaseUri().toString();
   }
   
   /**
@@ -146,7 +145,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/" + getAppName() + "/service/answer")
+      .target(getBaseUri() + "answer")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -160,7 +159,7 @@ public class BrcService extends WdkService {
         return new JSONObject(new String(buffer.toByteArray()));
       }
       else {
-        throw new WdkModelException("Bad status for app " + getAppName() + " - " + response.getStatus());
+        throw new WdkModelException("Bad status - " + response.getStatus());
       }
     }
     catch(IOException ioe) {
@@ -183,7 +182,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
 	Response response = client
-      .target("http://localhost/" + getAppName() + "/service/user/current")
+      .target(getBaseUri() + "user/current")
       .request(MediaType.APPLICATION_JSON)
       .get();
     try {
@@ -222,7 +221,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/" + getAppName() + "/service/user/" + userId + "/dataset")
+      .target(getBaseUri() + "user/" + userId + "/dataset")
 	  .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
       .cookie(authCookie)
@@ -260,7 +259,7 @@ public class BrcService extends WdkService {
       .newBuilder()
       .build();
     Response response = client
-      .target("http://localhost/" + getAppName() + "/service/record/DatasetRecordClasses.DatasetRecordClass/instance")
+      .target(getBaseUri() + "record/DatasetRecordClasses.DatasetRecordClass/instance")
       .property("Content-Type", MediaType.APPLICATION_JSON)
       .request(MediaType.APPLICATION_JSON)
 	  .post(Entity.entity(datasetRecordJson.toString(), MediaType.APPLICATION_JSON));
