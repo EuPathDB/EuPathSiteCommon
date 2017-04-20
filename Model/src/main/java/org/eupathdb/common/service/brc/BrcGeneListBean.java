@@ -1,6 +1,11 @@
 package org.eupathdb.common.service.brc;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.gusdb.wdk.model.WdkModelException;
+import org.jfree.util.Log;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class BrcGeneListBean {
@@ -12,6 +17,7 @@ public class BrcGeneListBean {
   private String provenance;
   private String significance;
   private String significanceType;
+  private Set<String> ids;
 
   public static BrcGeneListBean parseRecordGeneListJson(JSONObject recordJson, boolean answer) throws WdkModelException {
 	BrcGeneListBean brcGeneListBean = new BrcGeneListBean();
@@ -27,7 +33,15 @@ public class BrcGeneListBean {
 	if(answer) {
 	  brcGeneListBean.setSignificanceType("Percent matched");
 	  brcGeneListBean.setSignificance(String.valueOf(attributesJson.get("percent_count")));
-	}  
+	}
+	JSONObject tablesJson = recordJson.getJSONObject("tables");
+	JSONArray datasetGeneTableJson = tablesJson.getJSONArray("DatasetGeneTable");
+	Set<String> geneIds = new HashSet<>();
+	for(int i = 0; i < datasetGeneTableJson.length(); i++) {
+      String geneId = String.valueOf(((JSONObject) datasetGeneTableJson.get(i)).get("source_id"));
+      geneIds.add(geneId);
+	}
+	brcGeneListBean.setIds(geneIds);
 	return brcGeneListBean;
   }
   
@@ -93,6 +107,14 @@ public class BrcGeneListBean {
 
   public void setDescription(String description) {
 	this.description = description;
+  }
+
+  public Set<String> getIds() {
+	return ids;
+  }
+
+  public void setIds(Set<String> ids) {
+	this.ids = ids;
   }
 
 }

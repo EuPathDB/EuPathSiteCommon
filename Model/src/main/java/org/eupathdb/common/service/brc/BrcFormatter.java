@@ -48,5 +48,13 @@ public class BrcFormatter {
     }
     return json;
   }
+  
+  public static JSONArray getGeneListIdsJson(BrcGeneListBean bean) {
+    JSONArray idsJson = new JSONArray();
+    for(String id : bean.getIds()) {
+      idsJson.put(id);
+    }
+    return idsJson;
+  }
 
 }

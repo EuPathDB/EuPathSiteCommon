@@ -126,6 +126,25 @@ public class BrcService extends WdkService {
 	}
   }
   
+  @GET
+  @Path("/experiment/{experimentId}/gene-list/{idListId}/ids")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getIds(@PathParam(EXPERIMENT_ID_PATH_PARAM) String experimentId,
+		  @PathParam(ID_LIST_ID_PATH_PARAM) String idListId) {
+    try {
+      ExperimentRequest experimentRequest = new ExperimentRequest();
+      experimentRequest.setExperimentId(experimentId);
+      LOG.info("JSON to DatasetRecordService: " + experimentRequest.getDatasetRecordJson().toString(2));
+      JSONObject datasetRecordJson = callDatasetRecordService(experimentRequest.getDatasetRecordJson());
+      LOG.info("Dataset Record Service to JSON: " + datasetRecordJson.toString(2));
+      BrcGeneListBean brcGeneListBean = BrcBean.parseRecordJson(datasetRecordJson, false).getIdLists();
+      return Response.ok(BrcFormatter.getGeneListIdsJson(brcGeneListBean).toString()).build();
+    }
+    catch(WdkModelException e) {
+  	  throw new BadRequestException(e);
+  	}
+  }
+  
   /**
    * Provides an API for the gene list search detailing the input types
    * @return

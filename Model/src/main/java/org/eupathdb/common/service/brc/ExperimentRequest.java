@@ -17,12 +17,9 @@ public class ExperimentRequest {
         .put("description")
         .put("organism_prefix"))
       .put("tables", new JSONArray()
-        .put("Publications")
+        .put("DatasetGeneTable")
         .put("GenomeHistory")
-        .put("Contacts")
         .put("Version")
-        .put("References")
-        .put("ExampleGraphs")
         .put("HyperLinks"));
   }
 
