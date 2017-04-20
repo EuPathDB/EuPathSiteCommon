@@ -40,7 +40,7 @@ function Header(props) {
           <div id="header_rt">
             <div id="private-Logo">
               <a target=":blank" href="http://www.vet.upenn.edu">
-                <img width="210px" src={webAppUrl + '/images/' + projectId + '/PennVet_Logo_PMS.png'}/>
+                <img width="210px" src={webAppUrl + '/images/PrivateLogo.png'}/>
               </a></div>
             <div id="toplink">
               {isPartOfEuPathDB &&
