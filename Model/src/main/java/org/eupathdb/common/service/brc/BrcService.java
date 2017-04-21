@@ -126,6 +126,12 @@ public class BrcService extends WdkService {
 	}
   }
   
+  /**
+   * Provides a list of gene ids for the given experiment and id list.
+   * @param experimentId
+   * @param idListId
+   * @return
+   */
   @GET
   @Path("/experiment/{experimentId}/gene-list/{idListId}/ids")
   @Produces(MediaType.APPLICATION_JSON)

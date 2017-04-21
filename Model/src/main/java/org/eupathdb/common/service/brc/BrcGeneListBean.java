@@ -8,6 +8,11 @@ import org.jfree.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * A bean holding the idlist information to be send back in a BRC response.
+ * @author crisl-adm
+ *
+ */
 public class BrcGeneListBean {
   private String listIdentifier;
   private String displayName;
@@ -19,6 +24,15 @@ public class BrcGeneListBean {
   private String significanceType;
   private Set<String> ids;
 
+  /**
+   * Convert the WDK record response into a BRC Gene List bean object.  Again, the answer
+   * flag distinguishes between a search request that provides additional attributes and
+   * a record request.
+   * @param recordJson
+   * @param answer - true if a search request (i.e., WDK answer returned), false otherwise
+   * @return
+   * @throws WdkModelException
+   */
   public static BrcGeneListBean parseRecordGeneListJson(JSONObject recordJson, boolean answer) throws WdkModelException {
 	BrcGeneListBean brcGeneListBean = new BrcGeneListBean();
 	brcGeneListBean.setListIdentifier(

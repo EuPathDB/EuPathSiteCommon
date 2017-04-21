@@ -3,6 +3,11 @@ package org.eupathdb.common.service.brc;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Hardcoded JSON object in support of a BRC API request.
+ * @author crisl-adm
+ *
+ */
 public class ApiFormatter {
 	
   public static JSONObject getJson() {

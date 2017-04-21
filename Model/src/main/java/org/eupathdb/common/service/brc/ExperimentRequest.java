@@ -3,9 +3,19 @@ package org.eupathdb.common.service.brc;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Holds the BRC request information for experiments
+ * @author crisl-adm
+ *
+ */
 public class ExperimentRequest {
   private String experimentId;
   
+  /**
+   * Converts the data from the BRC request into a JSON object that serves as
+   * a WDK dataset record request
+   * @return - JSON object to send to WDK dataset record request
+   */
   public JSONObject getDatasetRecordJson() {
     return new JSONObject()
       .put("primaryKey", new JSONArray()
@@ -19,7 +29,6 @@ public class ExperimentRequest {
       .put("tables", new JSONArray()
         .put("DatasetGeneTable")
         .put("GenomeHistory")
-        .put("Version")
         .put("HyperLinks"));
   }
 
@@ -31,6 +40,4 @@ public class ExperimentRequest {
 	this.experimentId = experimentId;
   }
   
-  
-
 }
