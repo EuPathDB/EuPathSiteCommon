@@ -18,7 +18,7 @@ public class ApiFormatter {
 		  .put("displayName", "Gene Set")
 		  .put("description", "A list of genes to match against experiments")
 		  .put("idSources", new JSONArray()
-            .put("genebank"))
+            .put("ensembl"))
 		  .put("thresholdTypes", new JSONArray()
             .put(new JSONObject()
               .put("name", "Percent matched")
