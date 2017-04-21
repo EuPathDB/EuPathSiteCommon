@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.gusdb.wdk.model.WdkModelException;
-import org.jfree.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -48,14 +47,16 @@ public class BrcGeneListBean {
 	  brcGeneListBean.setSignificanceType("Percent matched");
 	  brcGeneListBean.setSignificance(String.valueOf(attributesJson.get("percent_count")));
 	}
-	JSONObject tablesJson = recordJson.getJSONObject("tables");
-	JSONArray datasetGeneTableJson = tablesJson.getJSONArray("DatasetGeneTable");
-	Set<String> geneIds = new HashSet<>();
-	for(int i = 0; i < datasetGeneTableJson.length(); i++) {
-      String geneId = String.valueOf(((JSONObject) datasetGeneTableJson.get(i)).get("source_id"));
-      geneIds.add(geneId);
-	}
-	brcGeneListBean.setIds(geneIds);
+	else {
+	  JSONObject tablesJson = recordJson.getJSONObject("tables");
+	  JSONArray datasetGeneTableJson = tablesJson.getJSONArray("DatasetGeneTable");  
+	  Set<String> geneIds = new HashSet<>();
+	  for(int i = 0; i < datasetGeneTableJson.length(); i++) {
+        String geneId = String.valueOf(((JSONObject) datasetGeneTableJson.get(i)).get("source_id"));
+        geneIds.add(geneId);
+	  }
+	  brcGeneListBean.setIds(geneIds);
+	}  
 	return brcGeneListBean;
   }
   
