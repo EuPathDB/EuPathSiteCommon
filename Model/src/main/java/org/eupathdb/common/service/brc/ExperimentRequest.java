@@ -10,6 +10,7 @@ import org.json.JSONObject;
  */
 public class ExperimentRequest {
   private String experimentId;
+  private String orthologs;
   
   /**
    * Converts the data from the BRC request into a JSON object that serves as
@@ -39,5 +40,13 @@ public class ExperimentRequest {
   public void setExperimentId(String experimentId) {
 	this.experimentId = experimentId;
   }
-  
+
+  public String getOrthologs() {
+	return orthologs;
+  }
+
+  public void setOrthologs(String orthologs) {
+	this.orthologs = orthologs;
+  }
+
 }

@@ -13,6 +13,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -40,6 +41,7 @@ public class BrcService extends WdkService {
   private NewCookie sessionCookie;
   private final String EXPERIMENT_ID_PATH_PARAM = "experimentId";
   private final String ID_LIST_ID_PATH_PARAM = "idListId";
+  private final String INCLUDE_ORTHOLOGS_QUERY_PARAM = "includeOrthologs";
   
   /**
    * Utility method to return the initial portion of the request uri so we can make internal REST calls
@@ -136,10 +138,12 @@ public class BrcService extends WdkService {
   @Path("/experiment/{experimentId}/gene-list/{idListId}/ids")
   @Produces(MediaType.APPLICATION_JSON)
   public Response getIds(@PathParam(EXPERIMENT_ID_PATH_PARAM) String experimentId,
-		  @PathParam(ID_LIST_ID_PATH_PARAM) String idListId) {
+		  @PathParam(ID_LIST_ID_PATH_PARAM) String idListId,
+		  @QueryParam(INCLUDE_ORTHOLOGS_QUERY_PARAM) String includeOrthologs) {
     try {
       ExperimentRequest experimentRequest = new ExperimentRequest();
       experimentRequest.setExperimentId(experimentId);
+      experimentRequest.setOrthologs(includeOrthologs);
       LOG.info("JSON to DatasetRecordService: " + experimentRequest.getDatasetRecordJson().toString(2));
       JSONObject datasetRecordJson = callDatasetRecordService(experimentRequest.getDatasetRecordJson());
       LOG.info("Dataset Record Service to JSON: " + datasetRecordJson.toString(2));
