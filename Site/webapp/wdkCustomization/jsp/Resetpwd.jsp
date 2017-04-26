@@ -9,10 +9,7 @@
 
 <imp:pageFrame title="${wdkModel.displayName} :: Reset Password"
                  banner="Reset Password"
-                 parentDivision="${wdkModel.displayName}"
-                 parentUrl="/home.jsp"
-                 divisionName="Reset Password"
-                 division="profile">
+                 refer="profile">
 
 <div align="center">
 
